@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b23f568-13fa-486b-b104-777c91e1b53b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Tema_1/test/Problem6Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Problem1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Problem2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Problem3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Tema_1/src/Problem6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Activitats/Tema_1/src/Problem6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Activitats/classpath.index" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Activitats/classpath.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_1/test/Problem6Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/test/Problem6Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,13 +79,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.Problem6Test">
-    <configuration name="Problem7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Problem7" />
-      <module name="Activitats" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Problem5Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Activitats" />
       <option name="PACKAGE_NAME" value="" />
@@ -127,13 +121,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test in Activitats" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Activitats" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/Tema_1/test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Problem6Test" />
+        <item itemvalue="JUnit.test in Activitats" />
         <item itemvalue="JUnit.Problem7Test (1)" />
         <item itemvalue="JUnit.Problem7Test" />
         <item itemvalue="JUnit.Problem5Test" />
-        <item itemvalue="Application.Problem7" />
       </list>
     </recent_temporary>
   </component>
@@ -145,7 +147,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676809322029</updated>
-      <workItem from="1676809323717" duration="11562000" />
+      <workItem from="1676809323717" duration="12626000" />
     </task>
     <servers />
   </component>

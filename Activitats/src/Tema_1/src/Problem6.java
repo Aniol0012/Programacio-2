@@ -8,9 +8,10 @@ import java.util.Arrays;
 public class Problem6 extends CommandLineProgram {
     public String removeExtrems(String str) {
         if (str.length() <= 2) {
-            return new String("");
+            return "";
         }
-        return new String(Arrays.copyOfRange(str.getBytes(), 1, str.length()));
+        byte[] strBytes = str.getBytes();
+        return new String(Arrays.copyOfRange(strBytes, 1, str.length()));
     }
 
     public void printString(String str, int testNumber) {

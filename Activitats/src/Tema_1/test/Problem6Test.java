@@ -27,8 +27,7 @@ class Problem6Test {
         Problem6 problem6 = new Problem6();
         String str = "do";
         String strResult = "";
+        assertEquals(strResult, problem6.removeExtrems(str));
         problem6.printString(strResult, 3);
     }
-
-
 }
