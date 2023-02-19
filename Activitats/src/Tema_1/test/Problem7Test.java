@@ -1,5 +1,4 @@
-package Tema_1.src;
-
+import Tema_1.src.Problem7;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

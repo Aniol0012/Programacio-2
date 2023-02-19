@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b23f568-13fa-486b-b104-777c91e1b53b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Tema_4/test/Tema_1/src/Problem7Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Problem4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Problem7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Tema_1/src/Problem5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Activitats/Tema_1/src/Problem5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Activitats/classpath.index" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Activitats/classpath.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tema_1/test/Tema_1/src/Problem7Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_4/test/Tema_1/src/Problem7Test.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +45,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_directory_selection": "F:/Aniol/Programació-2/Programacio-2/Activitats/src/Tema_4/test",
+    "last_directory_selection": "F:/Aniol/Programació-2/Programacio-2/Activitats/src/Tema_1/test",
     "last_opened_file_path": "C:/Users/aniol/OneDrive/UNI/1r/2n Quatri/Prog2/lib/acm.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -72,7 +66,7 @@
       <recent name="Tema_1.src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Problem7Test">
+  <component name="RunManager" selected="JUnit.Problem7Test (1)">
     <configuration name="Problem6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Problem6" />
       <module name="Activitats" />
@@ -96,12 +90,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Problem5Test.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Problem7Test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Activitats" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Problem5Test" />
-      <option name="METHOD_NAME" value="test2" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="Problem7Test" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,11 +116,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Problem7Test (1)" />
         <item itemvalue="JUnit.Problem7Test" />
         <item itemvalue="JUnit.Problem5Test" />
         <item itemvalue="Application.Problem7" />
         <item itemvalue="Application.Problem6" />
-        <item itemvalue="JUnit.Problem5Test.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -139,7 +132,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676809322029</updated>
-      <workItem from="1676809323717" duration="9781000" />
+      <workItem from="1676809323717" duration="10135000" />
     </task>
     <servers />
   </component>
