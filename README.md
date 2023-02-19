@@ -1,2 +1,15 @@
-# Programacio-2
- Repositori de les activitats i pràctiques de programació 2 de 1r de carrera
+# Programació II 
+1r de Enginyeria Informàtica UDL
+
+### Febrer - Juny de 2023
+Autor: **Aniol Serrano Ortega**
+
+### Descripció:
+
+Repositori de les activitats i pràctiques realitzades a Progrmacio II.
+
+### Instalació:
+
+   ```sh
+   git clone https://github.com/Aniol0012/Programacio-2
+   ```
