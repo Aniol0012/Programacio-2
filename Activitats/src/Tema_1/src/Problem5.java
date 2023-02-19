@@ -43,13 +43,13 @@ Diseñad e implementad un método para multiplicar matrices de enteros.
 El método recibirá como parámetros dos matrices y devolverá como resultado otra matriz. Es decir:
 
 Simplificaciones y pistas:
-• Dentro de la función podéis suponer que las matrices son de las
-dimensiones que tienen que ser (el número de columnas de left
-ha de coincidir con el número de filas de right).
-#colsLeft = #rowsRight
-• Haced un programa principal que cree un par de matrices
-constantes (aseguraros de que son de las dimensiones
-correctas).
-• Podéis usar el método print definido en el ejemplo de los
-apuntes (o programar uno por vosotros mismos).
+    • Dentro de la función podéis suponer que las matrices son de las
+      dimensiones que tienen que ser (el número de columnas de left
+      ha de coincidir con el número de filas de right).
+
+    • Haced un programa principal que cree un par de matrices
+      constantes (aseguraros de que son de las dimensiones
+      correctas).
+    • Podéis usar el método print definido en el ejemplo de los
+      apuntes (o programar uno por vosotros mismos).
  */
