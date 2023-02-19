@@ -1,40 +1,39 @@
+package Tema_1.src;
+
 import acm.program.CommandLineProgram;
 
 import java.util.Arrays;
 
 public class Problem5 extends CommandLineProgram {
+    public void printMatrix(int[][] left, int[][] right) {
+        for (int i = 0; i < left.length; i++) {
+            println(Arrays.toString(left[i]));
+        }
+    }
 
+    public int[][] matrixMultiplication(int[][] left, int[][] right) {
+        int numRowsLeft = left.length;
+        int numColsLeft = left[0].length; // El mateix que numRowsRight
+        int numColsRight = right[0].length;
 
-public void printMatrix (int[][] left, int[][] right) {
-	for (int i = 0; i < left.length; i++) {
-		println(Arrays.toString(left[i]));
-	}
-}
+        if (numRowsLeft == 0 || numColsLeft == 0 || numColsRight == 0) {
+            return new int[0][0];
+        }
+        int[][] product = new int[numRowsLeft][numColsRight];
 
-public int[][] matrixMultiplication (int[][] left, int[][] right) {
-	int numRowsLeft = left.length;
-	int numColsLeft = left[0].length; // El mateix que numRowsRight
-	int numColsRight = right[0].length;
+        for (int i = 0; i < numRowsLeft; i++) {
+            for (int j = 0; j < numColsRight; j++) {
+                for (int k = 0; k < numColsLeft; k++) {
+                    product[i][j] += left[i][k] * right[k][j];
+                }
+            }
+        }
+        return product;
+    }
 
-	if (numRowsLeft == 0 || numColsLeft == 0 || numColsRight == 0) {
-		return new int[0][0];
-	}
-	int[][] product = new int[numRowsLeft][numColsRight];
-
-	for (int i = 0; i < numRowsLeft; i++) {
-		for (int j = 0; j < numColsRight; j++) {
-			for (int k = 0; k < numColsLeft; k++) {
-				product[i][j] += left[i][k] * right[k][j];
-			}
-		}
-	}
-	return product;
-}
-
-
-public static void main (String[] args) {
-	new Problem5().start(args);
-}
+    public static void main(String[] args) {
+        new Problem5().start(args);
+    }
 }
 
  /*
