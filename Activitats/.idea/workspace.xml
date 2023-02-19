@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9b23f568-13fa-486b-b104-777c91e1b53b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Activitats.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Activitats.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Activitats/Problem5Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Activitats/Problem5Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_1/test/Problem5Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/test/Problem5Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,9 +70,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Problem5Test.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Activitats" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Problem5Test" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Problem5Test.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Activitats" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Problem5Test" />
+      <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Problem5Test" />
+        <item itemvalue="JUnit.Problem5Test.test2" />
+        <item itemvalue="JUnit.Problem5Test.test3" />
         <item itemvalue="Application.Problem5" />
       </list>
     </recent_temporary>
@@ -83,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676809322029</updated>
-      <workItem from="1676809323717" duration="2277000" />
+      <workItem from="1676809323717" duration="6850000" />
     </task>
     <servers />
   </component>

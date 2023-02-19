@@ -5,21 +5,23 @@ import acm.program.CommandLineProgram;
 import java.util.Arrays;
 
 public class Problem5 extends CommandLineProgram {
-    public void printMatrix(int[][] left, int[][] right) {
-        for (int i = 0; i < left.length; i++) {
-            println(Arrays.toString(left[i]));
+    public void printMatrix(int[][] result, int testNumber) {
+        println("[" + testNumber + "] La matriu resultant és:");
+        for (int i = 0; i < result.length; i++) {
+            println("\t" + Arrays.toString(result[i]));
         }
     }
 
     public int[][] matrixMultiplication(int[][] left, int[][] right) {
         int numRowsLeft = left.length;
+        int numRowsRight = right.length;
         int numColsLeft = left[0].length; // El mateix que numRowsRight
         int numColsRight = right[0].length;
-
-        if (numRowsLeft == 0 || numColsLeft == 0 || numColsRight == 0) {
-            return new int[0][0];
-        }
         int[][] product = new int[numRowsLeft][numColsRight];
+
+        if (numColsLeft == 0 || numColsRight == 0 || numColsLeft != numRowsRight) {
+            return new int[][]{{}};
+        }
 
         for (int i = 0; i < numRowsLeft; i++) {
             for (int j = 0; j < numColsRight; j++) {
