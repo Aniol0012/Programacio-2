@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9b23f568-13fa-486b-b104-777c91e1b53b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Problem1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Problem2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Problem3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Tema_1/src/Problem6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Activitats/Tema_1/src/Problem6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Activitats/classpath.index" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Activitats/classpath.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tema_1/test/Problem6Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/test/Problem6Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +140,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676809322029</updated>
-      <workItem from="1676809323717" duration="12626000" />
+      <workItem from="1676809323717" duration="14368000" />
     </task>
     <servers />
   </component>
