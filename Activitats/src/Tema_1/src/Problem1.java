@@ -1,4 +1,6 @@
- import acm.program.CommandLineProgram;
+package Tema_1.src;
+
+import acm.program.CommandLineProgram;
  import acm.program.ConsoleProgram;
 
 
@@ -7,12 +9,12 @@
      public void run() {
          int n = readInt("Introdueix un enter: ");
          if (n <= 1) {
-             System.out.println("El nombre ha de ser major a 1");
+             println("El nombre ha de ser major a 1");
          } else {
              if (isPerfect(n)) {
-                 System.out.println(n + " és un número perfecte");
+                 println(n + " és un número perfecte");
              } else {
-                 System.out.println(n + " no és un número perfecte");
+                 println(n + " no és un número perfecte");
              }
          }
      }

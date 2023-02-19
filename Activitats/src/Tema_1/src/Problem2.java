@@ -1,4 +1,6 @@
- import acm.program.CommandLineProgram;
+package Tema_1.src;
+
+import acm.program.CommandLineProgram;
 
 
  public class Problem2 extends CommandLineProgram {

@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b23f568-13fa-486b-b104-777c91e1b53b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Tema_1/test/Tema_1/src/Problem7Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tema_4/test/Tema_1/src/Problem7Test.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tema_1/test/Problem6Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Activitats/classpath.index" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Activitats/classpath.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_1/src/Problem6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/src/Problem6.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +21,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="JUnit5 Test Class" />
       </list>
     </option>
@@ -42,6 +48,7 @@
     "Repository.Attach.Sources": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
@@ -62,18 +69,15 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="Tema_1.src" />
+      <recent name="Tema_1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Problem7Test (1)">
-    <configuration name="Problem6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Problem6" />
-      <module name="Activitats" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.Problem6Test">
     <configuration name="Problem7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Problem7" />
       <module name="Activitats" />
@@ -85,6 +89,15 @@
       <module name="Activitats" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Problem5Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Problem6Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Activitats" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Problem6Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,7 +116,7 @@
       <module name="Activitats" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Tema_1.src.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Problem6Test" />
         <item itemvalue="JUnit.Problem7Test (1)" />
         <item itemvalue="JUnit.Problem7Test" />
         <item itemvalue="JUnit.Problem5Test" />
         <item itemvalue="Application.Problem7" />
-        <item itemvalue="Application.Problem6" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +145,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676809322029</updated>
-      <workItem from="1676809323717" duration="10135000" />
+      <workItem from="1676809323717" duration="11562000" />
     </task>
     <servers />
   </component>
