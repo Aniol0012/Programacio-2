@@ -6,13 +6,6 @@ import java.util.Arrays;
 
 
 public class Problem5 extends CommandLineProgram {
-    public void printMatrix(int[][] result, int testNumber) {
-        println("[" + testNumber + "] La matriu resultant és:");
-        for (int i = 0; i < result.length; i++) {
-            println("\t" + Arrays.toString(result[i]));
-        }
-    }
-
     public int[][] matrixMultiplication(int[][] left, int[][] right) {
         int numRowsLeft = left.length;
         int numRowsRight = right.length;
@@ -32,6 +25,13 @@ public class Problem5 extends CommandLineProgram {
             }
         }
         return product;
+    }
+
+    public void printMatrix(int[][] result, int testNumber) {
+        println("[" + testNumber + "] La matriu resultant és:");
+        for (int i = 0; i < result.length; i++) {
+            println("\t" + Arrays.toString(result[i]));
+        }
     }
 
     public static void main(String[] args) {

@@ -1,37 +1,33 @@
+package Tema_1.src;
+
 import acm.program.CommandLineProgram;
 
 import java.util.Arrays;
 
 
- public class Problem7 extends CommandLineProgram {
+public class Problem7 extends CommandLineProgram {
+    public String removeSpaces(String str) {
+        char[] strToChar = str.toCharArray();
+        char[] strResult = new char[strToChar.length];
+        int resultLenght = 0;
+        for (int i = 0; i < strToChar.length; i++) {
+            if (strToChar[i] == ' ') {
+                continue;
+            }
+            strResult[resultLenght] = strToChar[i];
+            resultLenght++;
+        }
+        return new String(Arrays.copyOfRange(strResult, 0, resultLenght));
+    }
 
-     public void run() {
-         String caracteres = "hola que tal";
-         var array = removeSpaces(caracteres);
-         System.out.println(array);
+    public void printString(String str, int testNumber) {
+        println("[" + testNumber + "] El string resultant és: `" + str + "`");
+    }
 
-     }
-
-     public String removeSpaces(String str) {
-         char[] toChar = str.toCharArray();
-         @SuppressWarnings("")
-         char[] noSpaces = new char[toChar.length];
-         int j = 0;
-         for (int i=0; i < toChar.length; i++) {
-             if (toChar[i] == ' '){
-                 continue;
-             }
-             noSpaces[j] = toChar[i];
-             j++;
-         }
-         var arr = Arrays.copyOfRange(noSpaces, 0, j);
-         return new String(arr);
-     }
-
-     public static void main(String[] args) {
-         new Problem7().start(args);
-     }
- }
+    public static void main(String[] args) {
+        new Problem7().start(args);
+    }
+}
 
  /*
 Diseñad e implementad un método tal que como parámetro de entrada reciba una cadena de caracteres
