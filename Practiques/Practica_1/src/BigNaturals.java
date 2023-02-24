@@ -40,13 +40,13 @@ public class BigNaturals extends CommandLineProgram {
         int num1Length = num1.length;
         int num2Length = num2.length;
         int tempLength = Math.max(num1Length, num2Length);
-        int[] result = new int[tempLength]; // esta mida o 1 mes
+        int[] result = new int[tempLength]; // It can be this length or 1 more
 
         int num1ToInt = getIntFromArray(num1);
         int num2ToInt = getIntFromArray(num2);
 
-        int total = num1ToInt + num2ToInt; // result in int
-        int intLength = getLength(total); // wjat
+        int total = num1ToInt + num2ToInt;
+        int intLength = getLength(total);
 
         if (tempLength < intLength) {
             result = new int[intLength];
