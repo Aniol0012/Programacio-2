@@ -50,7 +50,11 @@ public class BigNaturals extends CommandLineProgram {
             result = new int[intLength];
         }
         for (int i = 0; i < result.length; i++) {
+<<<<<<< Updated upstream
             result[result.length - i - 1] = total % 10;
+=======
+            result[i] = total % 10;
+>>>>>>> Stashed changes
             total /= 10;
         }
         return result;
