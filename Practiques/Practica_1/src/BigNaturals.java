@@ -84,18 +84,18 @@ public class BigNaturals extends CommandLineProgram {
         }
         int[] result = new int[num1Length + positions]; // Array del tamany de num.len + pos
         for (int i = 0; i < num1Length; i++) {
-            result[num1Length-i-1] = number[i]; // Copio els numeros al reves a les posicions originals de number
+            result[num1Length - i - 1] = number[i]; // Copio els numeros al reves a les posicions originals de number
             print(result[i]);
         }
         println();
 
         for (int i = num1Length; i < result.length; i++) {
             result[i] = 0; // se agregan los ceros al final
-            println("0's afegits: "+result[i]);
+            println("0's afegits: " + result[i]);
         }
 
         print("Array final: ");
-        for (int i=0; i<result.length;i++) {
+        for (int i = 0; i < result.length; i++) {
             print(+result[i]);
         }
         println();
