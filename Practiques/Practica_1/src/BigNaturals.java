@@ -34,38 +34,46 @@ public class BigNaturals extends CommandLineProgram {
         return true;
     }
 
-    /*
     public int[] add(int[] num1, int[] num2) {
-            if (num1.length > num2.length) { // Comprovem quin dels dos numeros són majors
-                int resultLen = num1.length;
-            } else {
-                int resultLen = num2.length;
-            }
-            int[] result = new int[num2.length]; // La length no es esta
-            for (int i = 0; i < 10000000; i++) {
-                result[i] = num1[i] + num2[i];
-            }
-            return result;
-      }
+        int num1Length = num1.length;
+        int num2Length = num2.length;
+        int tempLength = Math.max(num1Length, num2Length);
+        int[] result = new int[tempLength]; // esta mida o 1 mes
 
-     */
+        int num1ToInt = getIntFromArray(num1);
+        int num2ToInt = getIntFromArray(num2);
 
-    public int[] add(int[] num1, int[] num2) {
-        int resultLen = Math.max(num1.length, num2.length);
-        int sumInPosition;
-        int[] result = new int[2000];
-        for (int i = 0; i <= num1.length; i++) {
-            sumInPosition = 0;
-            if (i < num1.length) {
-                sumInPosition += num1[i];
-            }
-            if (i < num2.length) {
-                sumInPosition += num2[i];
-            }
-            result[i] = sumInPosition;
+        int total = num1ToInt + num2ToInt; // result in int
+        int intLength = getLength(total);
+
+        if (tempLength < intLength) {
+            result = new int[intLength];
+        }
+        for (int i = 0; i < result.length; i++) {
+            result[result.length - i - 1] = total % 10;
+            total /= 10;
         }
         return result;
     }
+
+    public int getLength(int num) {
+        int length = 1;
+        while (num >= 10) {
+            num /= 10;
+            length++;
+        }
+        return length;
+    }
+
+    public int getIntFromArray(int[] num) {
+        int result = 0;
+        for (int i = 0; i < num.length; i++) {
+            int currentNum = num[i];
+            result += currentNum * Math.pow(10, (num.length - i - 1));
+        }
+        return result;
+    }
+
 
     public int[] shiftLeft(int[] number, int positions) {
         throw new UnsupportedOperationException("Not implemented yet");
