@@ -2,6 +2,8 @@ import acm.program.CommandLineProgram;
 
 import java.util.Arrays;
 
+import static java.util.Arrays.deepEquals;
+
 /**
  * Implementations of infinite precision naturals using arrays of ints
  * <p>
@@ -44,17 +46,13 @@ public class BigNaturals extends CommandLineProgram {
         int num2ToInt = getIntFromArray(num2);
 
         int total = num1ToInt + num2ToInt; // result in int
-        int intLength = getLength(total);
+        int intLength = getLength(total); // wjat
 
         if (tempLength < intLength) {
             result = new int[intLength];
         }
         for (int i = 0; i < result.length; i++) {
-<<<<<<< Updated upstream
-            result[result.length - i - 1] = total % 10;
-=======
             result[i] = total % 10;
->>>>>>> Stashed changes
             total /= 10;
         }
         return result;
