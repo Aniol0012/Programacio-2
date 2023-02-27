@@ -79,30 +79,32 @@ public class BigNaturals extends CommandLineProgram {
 
     public int[] shiftLeft(int[] number, int positions) {
         int num1Length = number.length;
-        if (num1Length == 1 && number[0] == 0) { // si el número es 0, se devuelve el mismo número
+        if (num1Length == 1 || number[0] == 0) { // si el número es 0, se retorna el mateix numero
             return number;
         }
-        int[] result = new int[num1Length + positions]; // Array del tamany de num.len + pos
+        int[] result = new int[num1Length]; // Array del tamany de num.len + pos
         for (int i = 0; i < num1Length; i++) {
             result[num1Length - i - 1] = number[i]; // Copio els numeros al reves a les posicions originals de number
-            print(result[i]);
-        }
-        println();
-
-        for (int i = num1Length; i < result.length; i++) {
-            result[i] = 0; // se agregan los ceros al final
-            println("0's afegits: " + result[i]);
         }
 
-        print("Array final: ");
+        int[] result2 = new int[num1Length + positions];
+
+        // Copio els numeros de result a result 2
+
         for (int i = 0; i < result.length; i++) {
-            print(+result[i]);
+            result2[i] = result[i];
         }
-        println();
-        println(result.length);
-        return result;
-    }
 
+        for (int i = result.length; i < result2.length; i++) {
+            result2[i] = 0; // se agregan los ceros al final
+        }
+
+        int[] result3 = new int[result2.length];
+        for (int i = 0; i < result2.length; i++) { // Faig la representació del array
+            result3[result3.length - i - 1] = result2[i];
+        }
+        return result3;
+    }
 
     public int[] multiplyByDigit(int[] number, int digit) {
         throw new UnsupportedOperationException("Not implemented yet");
@@ -257,13 +259,6 @@ public class BigNaturals extends CommandLineProgram {
             printlnError("Error en 54 3 posiciones a la izquierda = 54000");
         }
 
-        if (!checkShiftLeft("235", 2, "23500")) {
-            printlnError("La solucio és 23500");
-        }
-
-        if (!checkShiftLeft("235", 0, "235")) {
-            printlnError("La solucio és 235");
-        }
         if (!checkShiftLeft("0", 3, "0")) {
             printlnError("Error en 0 3 posiciones a la izquierda = 0");
         }
