@@ -79,23 +79,22 @@ public class BigNaturals extends CommandLineProgram {
 
     public int[] shiftLeft(int[] number, int positions) {
         int num1Length = number.length;
-        if (num1Length == 1 || number[0] == 0) { // si el número es 0, se retorna el mateix numero
+        if (num1Length == 1 && number[0] == 0) { // si el número es 0, se retorna el mateix numero
             return number;
         }
-        int[] result = new int[num1Length]; // Array del tamany de num.len + pos
-        for (int i = 0; i < num1Length; i++) {
-            result[num1Length - i - 1] = number[i]; // Copio els numeros al reves a les posicions originals de number
-        }
-
+        int[] numberReversed = new int[num1Length]; // Array del tamany de num.len + pos
         int[] result2 = new int[num1Length + positions];
+        for (int i = 0; i < num1Length; i++) {
+            numberReversed[num1Length - i - 1] = number[i]; // Copio els numeros al reves a les posicions originals de number
+        }
 
         // Copio els numeros de result a result 2
 
-        for (int i = 0; i < result.length; i++) {
-            result2[i] = result[i];
+        for (int i = 0; i < numberReversed.length; i++) {
+            result2[i] = numberReversed[i];
         }
 
-        for (int i = result.length; i < result2.length; i++) {
+        for (int i = numberReversed.length; i < result2.length; i++) {
             result2[i] = 0; // se agregan los ceros al final
         }
 
