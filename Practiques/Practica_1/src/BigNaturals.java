@@ -151,7 +151,7 @@ public class BigNaturals extends CommandLineProgram {
             return new int[]{1};
         }
 
-        int carry=1;
+        int carry = 1;
         for (int i = 2; i <= numberToInt; i++) {
             carry *= i;
         }
