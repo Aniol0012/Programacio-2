@@ -135,11 +135,41 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     // Comprovar els casos base en cada funcio, i preguntar si fa falta usar les funcions definides previament
-
+    /*
+    Es decir, las funciones involucradas son:
+    ● multiplicar un número natural por un dígito (por ejemplo, a * b0)
+    ● desplazar un número hacia la izquierda (añadiendo ceros por la derecha).
+    ● sumar dos números que son, precisamente, las funciones que hemos definido
+    anteriormente (además de la que nos permite obtener el número 0, para inicializar el acumulador de las sumas parciales).
+     */
     public int[] multiply(int[] number1, int[] number2) {
+        printBar();
         println(number1);
         println(number2);
-        return null;
+        int[] number1Reversed = reverseArray(number1);
+        int number1ToInt = getIntFromArray(shiftLeft(number1Reversed,1));
+        print("El array 1 reversed és: ");
+        println(number1Reversed);
+        println("El number 1 a int és: " + number1ToInt);
+
+        int[] number2Reversed = reverseArray(number2);
+        int number2ToInt = getIntFromArray(shiftLeft(number2Reversed,1));
+        print("El array 2 reversed és: ");
+        println(number2Reversed);
+        println("El number 2 a int és: " + number2ToInt);
+
+        int number1Length = number1.length;
+        int number2Length = number2.length;
+        int tempLength = Math.max(number1Length, number2Length);
+        int[] result = new int[tempLength]; // It can be this length or 1 more CHANGE
+        int gettingLen = getLength(tempLength);
+
+        for (int i = 0; i < gettingLen; i++) {
+            result[i] = number1ToInt * number2ToInt;
+            println(result[i]);
+        }
+        printBar();
+        return reverseArray(result);
     }
 
     public int[] factorial(int[] number) {
@@ -173,7 +203,7 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public void println(int[] arr) { // Eliminar
-        print("L'array original és: [");
+        print("{*} [");
         for (int i = 0; i < arr.length - 1; i++) {
             print(arr[i] + ",");
         }
@@ -190,8 +220,8 @@ public class BigNaturals extends CommandLineProgram {
 //        testAdd();
 //        testShiftLeft();
 //        testMultiplyByDigit();
-//        testMultiply();
-        testFactorial();
+        testMultiply();
+//        testFactorial();
 //        testFibonacci();
     }
 
@@ -355,11 +385,11 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkMultiply("2", "3", "6")) {
             printlnError("Error en 2 * 3 = 6");
         }
-        if (!checkMultiply("999", "888", "887112")) {
-            printlnError("Error en 999 * 888 = 887112");
-        }
         if (!checkMultiply("10", "5", "50")) {
             printlnError("Error en 10 * 50 = 50");
+        }
+        if (!checkMultiply("999", "888", "887112")) {
+            printlnError("Error en 999 * 888 = 887112");
         }
         if (!checkMultiply("12", "555443535", "6665322420")) {
             printlnError("Error en 12 * 555443535 = 6665322420");
