@@ -78,31 +78,33 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] shiftLeft(int[] number, int positions) {
-        int num1Length = number.length;
-        if (num1Length == 1 && number[0] == 0) { // si el número es 0, se retorna el mateix numero
+        int numberLength = number.length;
+        int[] numberReversed = new int[numberLength];
+        int[] result = new int[numberLength + positions];
+        int[] resultReversed = new int[result.length];
+
+        if (numberLength == 1 && number[0] == 0) { // si el número es 0, se retorna el mateix numero
             return number;
         }
-        int[] numberReversed = new int[num1Length]; // Array del tamany de num.len + pos
-        int[] result2 = new int[num1Length + positions];
-        for (int i = 0; i < num1Length; i++) {
-            numberReversed[num1Length - i - 1] = number[i]; // Copio els numeros al reves a les posicions originals de number
+
+        for (int i = 0; i < numberLength; i++) {
+            numberReversed[numberLength - i - 1] = number[i]; // Copio els numeros al reves a les posicions originals de number
         }
 
-        // Copio els numeros de result a result 2
-
-        for (int i = 0; i < numberReversed.length; i++) {
-            result2[i] = numberReversed[i];
+        // Copio els numeros de numberReversed a result
+        for (int i = 0; i < numberLength; i++) {
+            result[i] = numberReversed[i];
         }
 
-        for (int i = numberReversed.length; i < result2.length; i++) {
-            result2[i] = 0; // se agregan los ceros al final
+        // Afegeixo els 0's al final segons positions
+        for (int i = numberLength; i < result.length; i++) {
+            result[i] = 0; // se agregan los ceros al final
         }
 
-        int[] result3 = new int[result2.length];
-        for (int i = 0; i < result2.length; i++) { // Faig la representació del array
-            result3[result3.length - i - 1] = result2[i];
+        for (int i = 0; i < result.length; i++) { // Faig la representació del array
+            resultReversed[resultReversed.length - i - 1] = result[i];
         }
-        return result3;
+        return resultReversed;
     }
 
     public int[] multiplyByDigit(int[] number, int digit) {
