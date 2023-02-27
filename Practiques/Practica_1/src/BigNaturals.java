@@ -37,6 +37,12 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] add(int[] num1, int[] num2) {
+        if (num1.length == 1 && num1[0] == 0) {
+            return num2;
+        } else if (num2.length == 1 && num2[0] == 0) {
+            return num1;
+        }
+
         int num1Length = num1.length;
         int num2Length = num2.length;
         int tempLength = Math.max(num1Length, num2Length);
@@ -77,7 +83,6 @@ public class BigNaturals extends CommandLineProgram {
         return result;
     }
 
-
     public int[] shiftLeft(int[] number, int positions) {
         int numberLength = number.length;
 
@@ -113,8 +118,8 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] multiplyByDigit(int[] number, int digit) {
-        if (number[number.length - 1] == 0) {
-            return new int[]{0};
+        if (number.length == 1 && number[0] == 0) {
+            zero();
         }
 
         int numberToInt = getIntFromArray(reverseArray(number));
@@ -129,24 +134,50 @@ public class BigNaturals extends CommandLineProgram {
         return result;
     }
 
+    // Comprovar els casos base en cada funcio, i preguntar si fa falta usar les funcions definides previament
+
+    public int[] multiply(int[] number1, int[] number2) {
+        println(number1);
+        println(number2);
+        return null;
+    }
+
+    public int[] factorial(int[] number) {
+        println(getIntFromArray(reverseArray(number)));
+        int numberToInt = getIntFromArray(reverseArray(number));
+        if (numberToInt == 0) {
+            return new int[]{0};
+        } else if (numberToInt == 1) {
+            return new int[]{1};
+        }
+
+        int carry=1;
+        for (int i = 2; i <= numberToInt; i++) {
+            carry *= i;
+        }
+        int totalLength = getLength(carry);
+        int[] result = new int[totalLength];
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = carry % 10;
+            carry /= 10;
+        }
+        return result;
+
+        // No funciona perque el int no te el rang suficient, provar de ferho amb long i adaptar les funcions.
+        // El mes probable serà haver de refer les funcions per a usarles en combinació per a resoldre el problema.
+    }
+
+    public int[] fibonacci(int[] number) {
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
+
     public void println(int[] arr) { // Eliminar
         print("L'array original és: [");
         for (int i = 0; i < arr.length - 1; i++) {
             print(arr[i] + ",");
         }
         println(arr[arr.length - 1] + "]");
-    }
-
-    public int[] multiply(int[] number1, int[] number2) {
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
-
-    public int[] factorial(int[] number) {
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
-
-    public int[] fibonacci(int[] number) {
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public void run() {
@@ -160,7 +191,7 @@ public class BigNaturals extends CommandLineProgram {
 //        testShiftLeft();
 //        testMultiplyByDigit();
 //        testMultiply();
-//        testFactorial();
+        testFactorial();
 //        testFibonacci();
     }
 
