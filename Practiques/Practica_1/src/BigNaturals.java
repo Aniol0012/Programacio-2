@@ -81,7 +81,6 @@ public class BigNaturals extends CommandLineProgram {
         int numberLength = number.length;
         int[] numberReversed = new int[numberLength];
         int[] result = new int[numberLength + positions];
-        int[] resultReversed = new int[result.length];
 
         if (numberLength == 1 && number[0] == 0) { // si el número es 0, se retorna el mateix numero
             return number;
@@ -101,14 +100,32 @@ public class BigNaturals extends CommandLineProgram {
             result[i] = 0; // se agregan los ceros al final
         }
 
-        for (int i = 0; i < result.length; i++) { // Faig la representació del array
-            resultReversed[resultReversed.length - i - 1] = result[i];
-        }
-        return resultReversed;
+        return reverseArray(result);
     }
 
+    public int[] reverseArray(int[] arr) {
+        int[] arrReversed = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) { // Faig la representació del array
+            arrReversed[arr.length - i - 1] = arr[i];
+        }
+        return arrReversed;
+    }
+
+    /*
+    Esta función calcula el número resultante de multiplicar el array que representa el número por el
+    dígito. Tened en cuenta que tenemos garantizado que todos los datos son correctos, es decir:
+        ● number es un vector válido
+        ● 0 <= digit <= 9
+
+    Esta operación tiene los mismos problemas que la suma respecto al tamaño de array que se
+    requiere para representar el resultado. Por ejemplo, 345 * 2 = 690 y 345 * 3 = 1035.
+
+    PISTA: Puede ser útil tratar por separado el caso cuando o bien el número representado por
+    number o bien digit son 0.
+    */
+
     public int[] multiplyByDigit(int[] number, int digit) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return null;
     }
 
     public int[] multiply(int[] number1, int[] number2) {
@@ -125,14 +142,14 @@ public class BigNaturals extends CommandLineProgram {
 
     public void run() {
 
-        testFromString();
-        testAsString();
-        testZero();
-        testOne();
-        testEquals();
-        testAdd();
-        testShiftLeft();
-//        testMultiplyByDigit();
+//        testFromString();
+//        testAsString();
+//        testZero();
+//        testOne();
+//        testEquals();
+//        testAdd();
+//        testShiftLeft();
+        testMultiplyByDigit();
 //        testMultiply();
 //        testFactorial();
 //        testFibonacci();
