@@ -77,14 +77,16 @@ public class BigNaturals extends CommandLineProgram {
         return result;
     }
 
+
     public int[] shiftLeft(int[] number, int positions) {
         int numberLength = number.length;
-        int[] numberReversed = new int[numberLength];
-        int[] result = new int[numberLength + positions];
 
         if (numberLength == 1 && number[0] == 0) { // si el número es 0, se retorna el mateix numero
             return number;
         }
+
+        int[] numberReversed = new int[numberLength];
+        int[] result = new int[numberLength + positions];
 
         for (int i = 0; i < numberLength; i++) {
             numberReversed[numberLength - i - 1] = number[i]; // Copio els numeros al reves a les posicions originals de number
@@ -99,7 +101,6 @@ public class BigNaturals extends CommandLineProgram {
         for (int i = numberLength; i < result.length; i++) {
             result[i] = 0; // se agregan los ceros al final
         }
-
         return reverseArray(result);
     }
 
@@ -111,21 +112,29 @@ public class BigNaturals extends CommandLineProgram {
         return arrReversed;
     }
 
-    /*
-    Esta función calcula el número resultante de multiplicar el array que representa el número por el
-    dígito. Tened en cuenta que tenemos garantizado que todos los datos son correctos, es decir:
-        ● number es un vector válido
-        ● 0 <= digit <= 9
-
-    Esta operación tiene los mismos problemas que la suma respecto al tamaño de array que se
-    requiere para representar el resultado. Por ejemplo, 345 * 2 = 690 y 345 * 3 = 1035.
-
-    PISTA: Puede ser útil tratar por separado el caso cuando o bien el número representado por
-    number o bien digit son 0.
-    */
-
     public int[] multiplyByDigit(int[] number, int digit) {
-        return null;
+        if (number[number.length - 1] == 0) {
+            return new int[]{0};
+        }
+
+        int numberToInt = getIntFromArray(reverseArray(number));
+        int total = numberToInt * digit;
+        int totalLength = getLength(total);
+        int[] result = new int[totalLength];
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = total % 10;
+            total /= 10;
+        }
+        return result;
+    }
+
+    public void println(int[] arr) { // Eliminar
+        print("L'array original és: [");
+        for (int i = 0; i < arr.length - 1; i++) {
+            print(arr[i] + ",");
+        }
+        println(arr[arr.length - 1] + "]");
     }
 
     public int[] multiply(int[] number1, int[] number2) {
@@ -149,7 +158,7 @@ public class BigNaturals extends CommandLineProgram {
 //        testEquals();
 //        testAdd();
 //        testShiftLeft();
-        testMultiplyByDigit();
+//        testMultiplyByDigit();
 //        testMultiply();
 //        testFactorial();
 //        testFibonacci();
