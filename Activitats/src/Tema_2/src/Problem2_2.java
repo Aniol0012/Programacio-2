@@ -27,6 +27,10 @@ public class Problem2_2 extends GraphicsProgram {
             for (int i = 0; i < NUM_TURTLES; i++) {
                 references[i].move(rollDie(), 0);
                 pause(TIMEOUT);
+                if (references[i].getX() >= getWidth()) {
+                    references[i].setFillColor(Color.RED);
+                    break;
+                }
             }
         }
     }
