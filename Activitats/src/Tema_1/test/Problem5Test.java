@@ -1,7 +1,9 @@
-import Tema_1.src.Problem5;
-import org.junit.jupiter.api.Test;
+package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import src.Problem5;
+
+import static org.junit.Assert.assertArrayEquals;
 
 class Problem5Test {
     @Test
