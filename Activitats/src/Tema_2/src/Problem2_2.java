@@ -23,12 +23,14 @@ public class Problem2_2 extends GraphicsProgram {
             references[i] = turtle;
         }
 
-        while (true) {
+        boolean running = true;
+        while (running) {
             for (int i = 0; i < NUM_TURTLES; i++) {
                 references[i].move(rollDie(), 0);
                 pause(TIMEOUT);
-                if (references[i].getX() >= getWidth()) {
+                if (references[i].getX() >= getWidth()-radius) {
                     references[i].setFillColor(Color.RED);
+                    running = false;
                     break;
                 }
             }
