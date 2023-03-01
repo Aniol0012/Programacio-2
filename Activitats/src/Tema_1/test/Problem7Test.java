@@ -31,6 +31,4 @@ class Problem7Test {
         assertEquals(strResult, problem7.removeSpaces(str));
         problem7.printString(strResult, 3);
     }
-
-
 }

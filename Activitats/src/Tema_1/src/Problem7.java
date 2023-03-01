@@ -1,4 +1,4 @@
-package Tema_1.src;
+package src;
 
 import acm.program.CommandLineProgram;
 
