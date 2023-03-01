@@ -6,16 +6,18 @@ import acm.program.GraphicsProgram;
 
 import java.awt.*;
 
+
 public class Problem2_1 extends GraphicsProgram {
     public double TIMEOUT = 1000.0; // 1 sec
+
     public void run() {
-        GRect rectangle = new GRect(100,100,200,200);
-        add(rectangle);
-        rectangle.setColor(Color.RED);
+        GRect rectangle = new GRect(100, 75.0, 30.0, 50.0);
         rectangle.setFillColor(Color.RED);
+        add(rectangle);
 
 
     }
+
     public static void main(String[] args) {
         new Problem2_1().start(args);
     }
