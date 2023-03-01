@@ -1,7 +1,6 @@
 package src;
 
 import acm.graphics.GOval;
-import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
@@ -28,7 +27,7 @@ public class Problem2_2 extends GraphicsProgram {
             for (int i = 0; i < NUM_TURTLES; i++) {
                 references[i].move(rollDie(), 0);
                 pause(TIMEOUT);
-                if (references[i].getX() >= getWidth()-radius) {
+                if (references[i].getX() >= getWidth() - radius) {
                     references[i].setFillColor(Color.RED);
                     running = false;
                     break;
