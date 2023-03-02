@@ -1,38 +1,43 @@
 package src;
 
+import acm.graphics.GLabel;
 import acm.graphics.GOval;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 
 import java.awt.*;
 
-
 public class Problem2_2 extends GraphicsProgram {
-    public double TIMEOUT = 5.0;
+    public double TIMEOUT = 20.0;
+    public double PADDING = 5.0;
     public int NUM_TURTLES = 10;
 
     public void run() {
-        GOval[] references = new GOval[NUM_TURTLES];
-        int radius = getHeight() / NUM_TURTLES;
+        GOval[] turtles = new GOval[NUM_TURTLES];
+        double radius = (double) getHeight() / NUM_TURTLES;
         for (int i = 0; i < NUM_TURTLES; i++) {
-            GOval turtle = new GOval(0, i * radius, radius, radius);
+            GOval turtle = new GOval(0, i * radius, radius - PADDING, radius - PADDING);
             add(turtle);
             turtle.setFilled(true);
             turtle.setFillColor(Color.GREEN);
-            references[i] = turtle;
+            turtle.setColor(Color.ORANGE);
+            turtles[i] = turtle;
         }
-
+        GLabel msg = new GLabel("Click to start the race", ((getWidth() - 50.0) / 2.0), ((getHeight() - 50.0) / 2.0));
+        add(msg);
+        waitForClick();
+        remove(msg);
         boolean running = true;
         while (running) {
             for (int i = 0; i < NUM_TURTLES; i++) {
-                references[i].move(rollDie(), 0);
-                pause(TIMEOUT);
-                if (references[i].getX() >= getWidth() - radius) {
-                    references[i].setFillColor(Color.RED);
+                turtles[i].move(rollDie(), 0);
+                if (turtles[i].getX() >= getWidth() - radius) {
+                    turtles[i].setFillColor(Color.RED);
                     running = false;
                     break;
                 }
             }
+            pause(TIMEOUT);
         }
     }
 

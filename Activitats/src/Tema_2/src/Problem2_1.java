@@ -5,15 +5,14 @@ import acm.program.GraphicsProgram;
 
 import java.awt.*;
 
-
 public class Problem2_1 extends GraphicsProgram {
     public double TIMEOUT = 5.0;
 
     public void run() {
         double rectWidth = 50.0;
         double rectHeight = 50.0;
-        double inicialX = (getWidth() / 2.0) - (rectWidth / 2.0); // Both in the middle of the screen
-        double inicialY = (getHeight() / 2.0) - (rectHeight / 2.0);
+        double inicialX = ((getWidth() - rectHeight) / 2.0); // Both in the middle of the screen
+        double inicialY = ((getHeight() - rectHeight) / 2.0);
 
         GRect rectangle = new GRect(inicialX, inicialY, rectWidth, rectHeight);
         add(rectangle);
@@ -21,9 +20,10 @@ public class Problem2_1 extends GraphicsProgram {
         rectangle.setFillColor(Color.RED);
         double position = rectangle.getX(); // Actual position;
         boolean shiftLeft = true;
+
         while (true) {
-            if (position >= 0 && shiftLeft) { // Shifting to the left
-                if (position == 0) {
+            if (position >= 0.0 && shiftLeft) { // Shifting to the left
+                if (position <= 0.0) {
                     shiftLeft = false;
                     continue;
                 }
