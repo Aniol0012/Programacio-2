@@ -1,4 +1,4 @@
-package src;
+package Tema_2.src;
 
 import acm.graphics.GRect;
 import acm.program.GraphicsProgram;

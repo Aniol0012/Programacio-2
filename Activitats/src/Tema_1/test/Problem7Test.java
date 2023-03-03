@@ -1,8 +1,6 @@
 import Tema_1.src.Problem7;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class Problem7Test {
 
     @Test

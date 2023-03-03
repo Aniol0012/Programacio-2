@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9b23f568-13fa-486b-b104-777c91e1b53b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Activitats1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Activitats.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_1/test/Problem7Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_1/test/Problem7Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_2/src/Problem2_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_2/src/Problem2_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_2/src/Problem2_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_2/src/Problem2_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_2/src/Problem2_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_2/src/Problem2_3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +53,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_directory_selection": "F:/Aniol/Programació-2/Programacio-2/Activitats/src/Tema_1/test",
-    "last_opened_file_path": "C:/Users/aniol/OneDrive/UNI/1r/2n Quatri/Prog2/lib/acm.jar",
+    "last_opened_file_path": "/Users/Aniol0012/IdeaProjects/Programacio-2/Activitats",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,12 +77,29 @@
       <recent name="Tema_1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Problem6Test">
-    <configuration name="Problem5Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Problem2_2">
+    <configuration name="Problem2_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tema_2.src.Problem2_2" />
       <module name="Activitats" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Problem5Test" />
-      <option name="TEST_OBJECT" value="class" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tema_2.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Problem2_3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tema_2.src.Problem2_3" />
+      <module name="Activitats" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tema_2.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -99,21 +122,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Problem7Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Activitats" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tema_1.src" />
-      <option name="MAIN_CLASS_NAME" value="Tema_1.src.Problem7Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="test in Activitats" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Activitats" />
       <option name="TEST_OBJECT" value="directory" />
@@ -124,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Problem2_2" />
+        <item itemvalue="Application.Problem2_3" />
         <item itemvalue="JUnit.Problem6Test" />
         <item itemvalue="JUnit.test in Activitats" />
         <item itemvalue="JUnit.Problem7Test (1)" />
-        <item itemvalue="JUnit.Problem7Test" />
-        <item itemvalue="JUnit.Problem5Test" />
       </list>
     </recent_temporary>
   </component>
@@ -141,6 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676809322029</updated>
       <workItem from="1676809323717" duration="14368000" />
+      <workItem from="1677850577831" duration="194000" />
     </task>
     <servers />
   </component>
