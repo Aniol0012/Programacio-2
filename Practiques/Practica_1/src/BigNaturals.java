@@ -70,15 +70,20 @@ public class BigNaturals extends CommandLineProgram {
         }
 
         // Elimina los ceros sobrantes
-        int i = result.length - 1;
-        while (i > 0 && result[i] == 0) {
-            i--;
+        int lastIndex = result.length - 1;
+        int NonZeroDigit = lastIndex;
+        for (int i = lastIndex; i >= 0; i--) {
+            if (result[i] != 0) {
+                NonZeroDigit = i;
+                break;
+            }
         }
 
-        // Si hay ceros, copia el arreglo en uno nuevo con una longitud reducida
-        if (i != result.length - 1) {
-            int[] shorterResult = new int[i + 1];
-            System.arraycopy(result, 0, shorterResult, 0, i + 1);
+        if (NonZeroDigit != lastIndex) { // Comprueba si hay ceros
+            int[] shorterResult = new int[NonZeroDigit + 1];
+            for (int j = 0; j <= NonZeroDigit; j++) {
+                shorterResult[j] = result[j];
+            }
             result = shorterResult;
         }
 
@@ -167,13 +172,13 @@ public class BigNaturals extends CommandLineProgram {
         println(number1);
         println(number2);
         int[] number1Reversed = reverseArray(number1);
-        int number1ToInt = getIntFromArray(shiftLeft(number1Reversed,1));
+        int number1ToInt = getIntFromArray(shiftLeft(number1Reversed, 1));
         print("El array 1 reversed és: ");
         println(number1Reversed);
         println("El number 1 a int és: " + number1ToInt);
 
         int[] number2Reversed = reverseArray(number2);
-        int number2ToInt = getIntFromArray(shiftLeft(number2Reversed,1));
+        int number2ToInt = getIntFromArray(shiftLeft(number2Reversed, 1));
         print("El array 2 reversed és: ");
         println(number2Reversed);
         println("El number 2 a int és: " + number2ToInt);
