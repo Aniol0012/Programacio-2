@@ -43,25 +43,45 @@ public class BigNaturals extends CommandLineProgram {
             return num1;
         }
 
-        int num1Length = num1.length;
-        int num2Length = num2.length;
-        int tempLength = Math.max(num1Length, num2Length);
-        int[] result = new int[tempLength]; // It can be this length or 1 more CHANGE
+        int tempLength = Math.max(num1.length, num2.length);
+        int[] result = new int[tempLength + 1]; // se agrega 1 para tener suficiente espacio para el carry
 
-        int num1ToInt = getIntFromArray(num1);
-        int num2ToInt = getIntFromArray(num2);
-
-        int total = num1ToInt + num2ToInt;
-        int intLength = getLength(total);
-
-        if (tempLength < intLength) {
-            result = new int[intLength];
-        }
-
-        for (int i = 0; i < result.length; i++) {
+        int carry = 0;
+        for (int i = 0; i < tempLength; i++) {
+            int digit1 = 0;
+            int digit2 = 0;
+            if (num1.length > i) {
+                digit1 = num1[i];
+            }
+            if (num2.length > i) {
+                digit2 = num2[i];
+            }
+            int total = digit1 + digit2 + carry;
+            if (total > 9) {
+                carry = 1;
+            } else {
+                carry = 0;
+            }
             result[i] = total % 10;
-            total /= 10;
         }
+
+        if (carry > 0) {
+            result[tempLength] = carry;
+        }
+
+        // Elimina los ceros sobrantes
+        int i = result.length - 1;
+        while (i > 0 && result[i] == 0) {
+            i--;
+        }
+
+        // Si hay ceros, copia el arreglo en uno nuevo con una longitud reducida
+        if (i != result.length - 1) {
+            int[] shorterResult = new int[i + 1];
+            System.arraycopy(result, 0, shorterResult, 0, i + 1);
+            result = shorterResult;
+        }
+
         return result;
     }
 
@@ -216,11 +236,11 @@ public class BigNaturals extends CommandLineProgram {
 //        testAsString();
 //        testZero();
 //        testOne();
-//        testEquals();
-//        testAdd();
+        testEquals();
+        testAdd();
 //        testShiftLeft();
 //        testMultiplyByDigit();
-        testMultiply();
+//        testMultiply();
 //        testFactorial();
 //        testFibonacci();
     }
@@ -307,6 +327,9 @@ public class BigNaturals extends CommandLineProgram {
         if (!equals(fromString("12345"), fromString("12345"))) {
             printlnError("Error en el caso 12345 = 12345");
         }
+        if (!equals(fromString("78678278278527867857278221245524554643545289878"), fromString("78678278278527867857278221245524554643545289878"))) {
+            printlnError("Error en el caso 78678278278527867857278221245524554643545289878 = 78678278278527867857278221245524554643545289878");
+        }
         printlnInfo("Final de las pruebas de equals");
     }
 
@@ -316,8 +339,11 @@ public class BigNaturals extends CommandLineProgram {
 
     private void testAdd() {
         printlnInfo("Inicio de las pruebas de add");
-        if (!checkAdd("1", "1", "2")) {
-            printlnError("Error en la suma 1 + 1 = 2");
+        if (!checkAdd("0", "7", "7")) {
+            printlnError("Error en la suma 0 + 7 = 7");
+        }
+        if (!checkAdd("23", "8", "31")) {
+            printlnError("Error en la suma 23 + 8 = 31");
         }
         if (!checkAdd("5", "5", "10")) {
             printlnError("Error en la suma 5 + 5 = 10");
@@ -330,6 +356,9 @@ public class BigNaturals extends CommandLineProgram {
         }
         if (!checkAdd("5", "0", "5")) {
             printlnError("Error en la suma 5 + 0 = 5");
+        }
+        if (!checkAdd("500000000000000000000000000000000000", "550000000000000000000000000000000000000", "550500000000000000000000000000000000000")) {
+            printlnError("Error en la suma larga");
         }
         printlnInfo("Final de las pruebas de add");
     }
