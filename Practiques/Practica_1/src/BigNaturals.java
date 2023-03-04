@@ -136,31 +136,32 @@ public class BigNaturals extends CommandLineProgram {
         return arrReversed;
     }
 
-    public int[] multiplyByDigit(int[] number, int digit) {
-        if (number.length == 1 && number[0] == 0) {
-            zero();
+    public int[] multiplyByDigit(int[] number, int digit) { // Sha de optimitzar i millorar els returns per ferlos com en el add pero funciona
+        if ((number.length == 1 && number[0] == 0) || digit == 0) {
+            return new int[]{0};
         }
 
-        int numberToInt = getIntFromArray(reverseArray(number));
-        int total = numberToInt * digit;
-        int totalLength = getLength(total);
-        int[] result = new int[totalLength];
+        int carry = 0, product;
+        int[] result = new int[number.length + 1];
 
-        for (int i = 0; i < result.length; i++) {
-            result[i] = total % 10;
-            total /= 10;
+        for (int i = 0; i < number.length; i++) {
+            product = (digit * number[i]) + carry; // el parentesis se pot treure
+            result[i] = product % 10;
+            carry = product / 10;
         }
-        return result;
+
+        if (carry > 0) {
+            result[number.length] = carry;
+            return result;
+        }
+
+        int[] shortResult = new int[result.length - 1];
+        for (int i = 0; i < shortResult.length; i++) {
+            shortResult[i] = result[i];
+        }
+        return shortResult;
     }
 
-    // Comprovar els casos base en cada funcio, i preguntar si fa falta usar les funcions definides previament
-    /*
-    Es decir, las funciones involucradas son:
-    ● multiplicar un número natural por un dígito (por ejemplo, a * b0)
-    ● desplazar un número hacia la izquierda (añadiendo ceros por la derecha).
-    ● sumar dos números que son, precisamente, las funciones que hemos definido
-    anteriormente (además de la que nos permite obtener el número 0, para inicializar el acumulador de las sumas parciales).
-     */
     public int[] multiply(int[] number1, int[] number2) {
         printBar();
         println(number1);
@@ -236,9 +237,9 @@ public class BigNaturals extends CommandLineProgram {
 //        testZero();
 //        testOne();
 //        testEquals();
-        testAdd();
-        testShiftLeft();
-//        testMultiplyByDigit();
+//        testAdd();
+//        testShiftLeft();
+        testMultiplyByDigit();
 //        testMultiply();
 //        testFactorial();
 //        testFibonacci();
@@ -451,6 +452,41 @@ public class BigNaturals extends CommandLineProgram {
         }
         if (!checkMultByDigit("24", 0, "0")) {
             printlnError("Error en 24 * 0 = 0");
+        }
+        if (!checkMultByDigit("123", 5, "615")) {
+            printlnError("Error en 123 * 5 = 615");
+        }
+        if (!checkMultByDigit("987", 4, "3948")) {
+            printlnError("Error en 987 * 4 = 3948");
+        }
+        if (!checkMultByDigit("6789", 1, "6789")) {
+            printlnError("Error en 6789 * 1 = 6789");
+        }
+        if (!checkMultByDigit("345", 9, "3105")) {
+            printlnError("Error en 345 * 9 = 3105");
+        }
+        if (!checkMultByDigit("987", 4, "3948")) {
+            printlnError("Error en 987 * 4 = 3948");
+        }
+
+        if (!checkMultByDigit("6789", 1, "6789")) {
+            printlnError("Error en 6789 * 1 = 6789");
+        }
+
+        if (!checkMultByDigit("345", 9, "3105")) {
+            printlnError("Error en 345 * 9 = 3105");
+        }
+
+        if (!checkMultByDigit("9876543210", 2, "19753086420")) {
+            printlnError("Error en 9876543210 * 2 = 19753086420");
+        }
+
+        if (!checkMultByDigit("12345678901234567890", 3, "37037036703703703670")) {
+            printlnError("Error en 12345678901234567890 * 3 = 37037036703703703670");
+        }
+
+        if (!checkMultByDigit("99999999999999999999999999999999999999999999999999999999999999999999999999999999", 9, "899999999999999999999999999999999999999999999999999999999999999999999999999999991")) {
+            printlnError("Error en 99999999999999999999999999999999999999999999999999999999999999999999999999999999 * 9 = 899999999999999999999999999999999999999999999999999999999999999999999999999999991");
         }
         printlnInfo("Final de las pruebas de multiplyByDigit");
     }
