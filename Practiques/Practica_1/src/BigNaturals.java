@@ -37,24 +37,16 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] add(int[] num1, int[] num2) {
-        printBar();
-        println("Arrays de entrada:");
-        println(num1);
-        println(num2);
         if (num1.length == 1 && num1[0] == 0) {
-            print("Array resultant: ");
-            println(num2);
             return num2;
         } else if (num2.length == 1 && num2[0] == 0) {
-            print("Array resultant: ");
-            println(num1);
             return num1;
         }
 
         int tempLength = Math.max(num1.length, num2.length);
-        int[] result = new int[tempLength + 1]; // se agrega 1 para tener suficiente espacio para el carry
+        int total, carry = 0;
+        int[] result = new int[tempLength + 1];
 
-        int carry = 0;
         for (int i = 0; i < tempLength; i++) {
             int digit1 = 0;
             int digit2 = 0;
@@ -64,7 +56,7 @@ public class BigNaturals extends CommandLineProgram {
             if (num2.length > i) {
                 digit2 = num2[i];
             }
-            int total = digit1 + digit2 + carry;
+            total = digit1 + digit2 + carry;
             if (total > 9) {
                 carry = 1;
             } else {
@@ -77,13 +69,12 @@ public class BigNaturals extends CommandLineProgram {
             result[tempLength] = carry;
         }
 
-        // Elimina los ceros sobrantes
         int lastIndex = result.length - 1;
-        int nonZeroDigit = lastIndex;
-        for (int i = lastIndex; i >= 0; i--) {
+        int nonZeroDigit = 0;
+        // Deletes the unnecessary 0's
+        for (int i = 0; i <= lastIndex; i++) {
             if (result[i] != 0) {
                 nonZeroDigit = i;
-                break;
             }
         }
 
@@ -95,11 +86,10 @@ public class BigNaturals extends CommandLineProgram {
             result = shorterResult;
         }
 
-        print("Array resultant: ");
-        println(result);
-        printBar();
         return result;
     }
+
+
 
     public int getLength(int num) { // From int gets the length as if it was in one array CHANGE
         int length = 1;
@@ -120,29 +110,29 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] shiftLeft(int[] number, int positions) {
+        printBar();
+        println("El number donat amb [" + positions + "] posicions és:");
+        println(number);
         int numberLength = number.length;
 
-        if (numberLength == 1 && number[0] == 0) { // si el número es 0, se retorna el mateix numero
+        if ((numberLength == 1 && number[0] == 0) || (positions == 0)) { // si el número es 0 o no hi ha cap desplaçament, se retorna el mateix numero
             return number;
         }
 
-        int[] numberReversed = new int[numberLength];
         int[] result = new int[numberLength + positions];
 
-        for (int i = 0; i < numberLength; i++) {
-            numberReversed[numberLength - i - 1] = number[i]; // Copio els numeros al reves a les posicions originals de number
+        // Agrego los 0's al principio según la variable positions
+        for (int i = 0; i < positions; i++) {
+            result[i] = 0;
         }
 
-        // Copio els numeros de numberReversed a result
+        // Copio los números del array original al resultado
         for (int i = 0; i < numberLength; i++) {
-            result[i] = numberReversed[i];
+            result[i + positions] = number[i];
         }
 
-        // Afegeixo els 0's al final segons positions
-        for (int i = numberLength; i < result.length; i++) {
-            result[i] = 0; // se agregan los ceros al final
-        }
-        return reverseArray(result);
+        println(result);
+        return result;
     }
 
     public int[] reverseArray(int[] arr) {
@@ -252,7 +242,7 @@ public class BigNaturals extends CommandLineProgram {
 //        testAsString();
 //        testZero();
 //        testOne();
-        testEquals();
+//        testEquals();
         testAdd();
 //        testShiftLeft();
 //        testMultiplyByDigit();
@@ -376,6 +366,44 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkAdd("500000000000000000000000000000000000", "550000000000000000000000000000000000000", "550500000000000000000000000000000000000")) {
             printlnError("Error en la suma larga");
         }
+        if (!checkAdd("0", "0", "0")) {
+            printlnError("Error en la suma 0 + 0 = 0");
+        }
+        if (!checkAdd("999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999", "1", "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")) {
+            printlnError("Error en la suma de números muy grandes");
+        }
+
+        if (!checkAdd("12345678901234567890", "98765432109876543210", "111111111011111111100")) {
+            printlnError("Error en la suma de números grandes");
+        }
+
+        if (!checkAdd("123456789", "987654321", "1111111110")) {
+            printlnError("Error en la suma de números pequeños");
+        }
+
+        if (!checkAdd("5", "5", "10")) {
+            printlnError("Error en la suma 5 + 5 = 10");
+        }
+
+        if (!checkAdd("9", "9", "18")) {
+            printlnError("Error en la suma 9 + 9 = 18");
+        }
+
+        if (!checkAdd("123", "987", "1110")) {
+            printlnError("Error en la suma 123 + 987 = 1110");
+        }
+
+        if (!checkAdd("12345678901234567890", "98765432109876543210", "111111111011111111100")) {
+            printlnError("Error en la suma de números grandes 2");
+        }
+
+        if (!checkAdd("555", "245", "800")) {
+            printlnError("Error en la suma 555 + 245 = 800");
+        }
+
+        if (!checkAdd("1000", "1000", "2000")) {
+            printlnError("Error en la suma 1000 + 1000 = 2000");
+        }
         printlnInfo("Final de las pruebas de add");
     }
 
@@ -395,6 +423,21 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkShiftLeft("0", 3, "0")) {
             printlnError("Error en 0 3 posiciones a la izquierda = 0");
         }
+        // Test con un número grande y 0 posiciones
+        if (!checkShiftLeft("123456789", 0, "123456789")) {
+            printlnError("Error en 123456789 0 posiciones a la izquierda = 123456789");
+        }
+
+        // Test con un número grande y 5 posiciones
+        if (!checkShiftLeft("123456789", 40, "1234567890000000000000000000000000000000000000000")) {
+            printlnError("Error en 123456789 5 posiciones a la izquierda = 1234567890000000000000000000000000000000000000000");
+        }
+
+        // Test con un número pequeño y 2 posiciones
+        if (!checkShiftLeft("9", 2, "900")) {
+            printlnError("Error en 9 2 posiciones a la izquierda = 900");
+        }
+
         printlnInfo("Final de las pruebas de shiftLeft");
     }
 
