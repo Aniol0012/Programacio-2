@@ -37,9 +37,17 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] add(int[] num1, int[] num2) {
+        printBar();
+        println("Arrays de entrada:");
+        println(num1);
+        println(num2);
         if (num1.length == 1 && num1[0] == 0) {
+            print("Array resultant: ");
+            println(num2);
             return num2;
         } else if (num2.length == 1 && num2[0] == 0) {
+            print("Array resultant: ");
+            println(num1);
             return num1;
         }
 
@@ -71,22 +79,25 @@ public class BigNaturals extends CommandLineProgram {
 
         // Elimina los ceros sobrantes
         int lastIndex = result.length - 1;
-        int NonZeroDigit = lastIndex;
+        int nonZeroDigit = lastIndex;
         for (int i = lastIndex; i >= 0; i--) {
             if (result[i] != 0) {
-                NonZeroDigit = i;
+                nonZeroDigit = i;
                 break;
             }
         }
 
-        if (NonZeroDigit != lastIndex) { // Comprueba si hay ceros
-            int[] shorterResult = new int[NonZeroDigit + 1];
-            for (int j = 0; j <= NonZeroDigit; j++) {
+        if (nonZeroDigit != lastIndex) { // Checks if there are 0's left
+            int[] shorterResult = new int[nonZeroDigit + 1];
+            for (int j = 0; j <= nonZeroDigit; j++) {
                 shorterResult[j] = result[j];
             }
             result = shorterResult;
         }
 
+        print("Array resultant: ");
+        println(result);
+        printBar();
         return result;
     }
 
