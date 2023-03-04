@@ -136,7 +136,7 @@ public class BigNaturals extends CommandLineProgram {
         return arrReversed;
     }
 
-    public int[] multiplyByDigit(int[] number, int digit) { // Sha de optimitzar i millorar els returns per ferlos com en el add pero funciona
+    public int[] multiplyByDigit(int[] number, int digit) {
         if ((number.length == 1 && number[0] == 0) || digit == 0) {
             return new int[]{0};
         }
@@ -145,7 +145,7 @@ public class BigNaturals extends CommandLineProgram {
         int[] result = new int[number.length + 1];
 
         for (int i = 0; i < number.length; i++) {
-            product = (digit * number[i]) + carry; // el parentesis se pot treure
+            product = (digit * number[i]) + carry;
             result[i] = product % 10;
             carry = product / 10;
         }
@@ -241,8 +241,8 @@ public class BigNaturals extends CommandLineProgram {
 //        testEquals();
 //        testAdd();
 //        testShiftLeft();
-        testMultiplyByDigit();
-//        testMultiply();
+//        testMultiplyByDigit();
+        testMultiply();
 //        testFactorial();
 //        testFibonacci();
     }
@@ -659,6 +659,12 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public void printBar() {
-        println("--------------------------------------------------");
+        int numChar=150;
+        for (int i=0; i<numChar;i++){
+            print("─");
+            //print("═");
+            //print("■");
+        }
+        println();
     }
 }
