@@ -89,8 +89,6 @@ public class BigNaturals extends CommandLineProgram {
         return result;
     }
 
-
-
     public int getLength(int num) { // From int gets the length as if it was in one array CHANGE
         int length = 1;
         while (num >= 10) {
@@ -110,30 +108,25 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] shiftLeft(int[] number, int positions) {
-        printBar();
-        println("El number donat amb [" + positions + "] posicions és:");
-        println(number);
-        int numberLength = number.length;
+        int originalLength = number.length;
 
-        if ((numberLength == 1 && number[0] == 0) || (positions == 0)) { // si el número es 0 o no hi ha cap desplaçament, se retorna el mateix numero
+        if ((originalLength == 1 && number[0] == 0) || positions == 0) {
             return number;
         }
 
-        int[] result = new int[numberLength + positions];
+        int[] result = new int[originalLength + positions];
 
-        // Agrego los 0's al principio según la variable positions
         for (int i = 0; i < positions; i++) {
             result[i] = 0;
         }
 
-        // Copio los números del array original al resultado
-        for (int i = 0; i < numberLength; i++) {
+        for (int i = 0; i < originalLength; i++) {
             result[i + positions] = number[i];
         }
 
-        println(result);
         return result;
     }
+
 
     public int[] reverseArray(int[] arr) {
         int[] arrReversed = new int[arr.length];
@@ -244,7 +237,7 @@ public class BigNaturals extends CommandLineProgram {
 //        testOne();
 //        testEquals();
         testAdd();
-//        testShiftLeft();
+        testShiftLeft();
 //        testMultiplyByDigit();
 //        testMultiply();
 //        testFactorial();
