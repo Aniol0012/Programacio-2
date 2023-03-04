@@ -156,9 +156,11 @@ public class BigNaturals extends CommandLineProgram {
         }
 
         int[] shortResult = new int[result.length - 1];
+
         for (int i = 0; i < shortResult.length; i++) {
             shortResult[i] = result[i];
         }
+
         return shortResult;
     }
 
