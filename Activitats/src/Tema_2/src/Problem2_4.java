@@ -28,7 +28,7 @@ public class Problem2_4 extends CommandLineProgram {
         while (st.hasMoreTokens()) {
             String word = st.nextToken();
 
-            if (word.length() >= maxLength) { // If the length of the words are equal, it returns the last one
+            if (word.length() >= maxLength) { // If the length of the words is equal, it returns the last one
                 maxLength = word.length();
                 longestWord = word;
             }
