@@ -138,9 +138,10 @@ public class BigNaturals extends CommandLineProgram {
 
     public int[] multiplyByDigit(int[] number, int digit) {
         if ((number.length == 1 && number[0] == 0) || digit == 0) {
-            return new int[]{0};
+            zero();
         }
 
+        /*
         int carry = 0, product;
         int[] result = new int[number.length + 1];
 
@@ -162,6 +163,12 @@ public class BigNaturals extends CommandLineProgram {
         }
 
         return shortResult;
+         */
+        int[] result = zero();
+        for (int i = 1; i <= digit; i++) {
+            result = add(result, number);
+        }
+        return result;
     }
 
     public int[] multiply(int[] number1, int[] number2) {
@@ -241,8 +248,8 @@ public class BigNaturals extends CommandLineProgram {
 //        testEquals();
 //        testAdd();
 //        testShiftLeft();
-//        testMultiplyByDigit();
-        testMultiply();
+        testMultiplyByDigit();
+//        testMultiply();
 //        testFactorial();
 //        testFibonacci();
     }
