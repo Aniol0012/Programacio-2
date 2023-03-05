@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Activitats/src/Activitats.iml" filepath="$PROJECT_DIR$/Activitats/src/Activitats.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Activitats/Activitats1.iml" filepath="$PROJECT_DIR$/Activitats/Activitats1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practiques/Practiques.iml" filepath="$PROJECT_DIR$/Practiques/Practiques.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Programacio-2.iml" filepath="$PROJECT_DIR$/.idea/Programacio-2.iml" />
+    </modules>
+  </component>
+</project>

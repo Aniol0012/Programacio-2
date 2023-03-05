@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b23f568-13fa-486b-b104-777c91e1b53b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Tema_2/src/Problem2_4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +48,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_directory_selection": "F:/Aniol/Programació-2/Programacio-2/Activitats/src/Tema_1/test",
-    "last_opened_file_path": "C:/Users/aniol/IdeaProjects/bignaturals",
+    "last_opened_file_path": "C:/Users/aniol/IdeaProjects/Programacio-2/Activitats/src/Tema_2/src/Problem2_3.java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,6 +57,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15332031",
     "project.structure.side.proportion": "0.2",
+    "two.files.diff.last.used.file": "C:/Users/aniol/IdeaProjects/Programacio-2/Activitats/src/Tema_2/src/Problem2_3.java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -70,8 +72,11 @@
       <recent name="Tema_1.src" />
       <recent name="Tema_1" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Tema_2.src" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Problem2_2">
+  <component name="RunManager" selected="Application.Problem2_4">
     <configuration name="Problem2_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Tema_2.src.Problem2_2" />
       <module name="Activitats" />
@@ -98,19 +103,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Problem6Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Problem2_4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tema_2.src.Problem2_4" />
       <module name="Activitats" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Problem6Test" />
-      <option name="TEST_OBJECT" value="class" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tema_2.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Problem7Test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Problem6Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Activitats" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Problem7Test" />
+      <option name="MAIN_CLASS_NAME" value="Problem6Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Problem2_4" />
         <item itemvalue="Application.Problem2_2" />
         <item itemvalue="Application.Problem2_3" />
         <item itemvalue="JUnit.Problem6Test" />
         <item itemvalue="JUnit.test in Activitats" />
-        <item itemvalue="JUnit.Problem7Test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -145,6 +154,8 @@
       <workItem from="1676809323717" duration="14368000" />
       <workItem from="1677850577831" duration="602000" />
       <workItem from="1677924404123" duration="24000" />
+      <workItem from="1677950084147" duration="48000" />
+      <workItem from="1678008295899" duration="3188000" />
     </task>
     <servers />
   </component>
