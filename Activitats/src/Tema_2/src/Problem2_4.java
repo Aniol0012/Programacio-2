@@ -15,7 +15,7 @@ public class Problem2_4 extends CommandLineProgram {
         printBar();
     }
 
-    public String DELIMITERS = " ,.;:123456789";
+    public static final String DELIMITERS = " ,.;:123456789";
     public String longestWord(String line) {
         if (line.length() == 0) {
             return line;
