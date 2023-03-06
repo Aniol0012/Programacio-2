@@ -203,7 +203,7 @@ public class BigNaturals extends CommandLineProgram {
 //        testOne();
 //        testEquals();
 //        testAdd();
-//        testShiftLeft();
+        testShiftLeft();
 //        testMultiplyByDigit();
         testMultiply();
 //        testFactorial();
@@ -398,6 +398,9 @@ public class BigNaturals extends CommandLineProgram {
         // Test con un número pequeño y 2 posiciones
         if (!checkShiftLeft("9", 2, "900")) {
             printlnError("Error en 9 2 posiciones a la izquierda = 900");
+        }
+        if (!checkShiftLeft("485", 2, "48500")) {
+            printlnError("Error en 485 2 posiciones a la izquierda = 48500");
         }
 
         printlnInfo("Final de las pruebas de shiftLeft");
