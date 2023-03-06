@@ -71,6 +71,7 @@ public class BigNaturals extends CommandLineProgram {
 
         int lastIndex = result.length - 1;
         int nonZeroDigit = 0;
+
         // Deletes the unnecessary 0's
         for (int i = 0; i <= lastIndex; i++) {
             if (result[i] != 0) {
@@ -78,7 +79,8 @@ public class BigNaturals extends CommandLineProgram {
             }
         }
 
-        if (nonZeroDigit != lastIndex) { // Checks if there are 0's left
+        // Checks if there are any 0's left
+        if (nonZeroDigit != lastIndex) {
             int[] shorterResult = new int[nonZeroDigit + 1];
             for (int j = 0; j <= nonZeroDigit; j++) {
                 shorterResult[j] = result[j];
@@ -89,7 +91,8 @@ public class BigNaturals extends CommandLineProgram {
         return result;
     }
 
-    public int getLength(int num) { // From int gets the length as if it was in one array CHANGE
+    // From int gets the length as if it was in one array
+    public int getLength(int num) {
         int length = 1;
         while (num >= 10) {
             num /= 10;
@@ -98,6 +101,7 @@ public class BigNaturals extends CommandLineProgram {
         return length;
     }
 
+    // From array returns it in an int
     public int getIntFromArray(int[] num) {
         int result = 0;
         for (int i = 0; i < num.length; i++) {
@@ -141,29 +145,6 @@ public class BigNaturals extends CommandLineProgram {
             zero();
         }
 
-        /*
-        int carry = 0, product;
-        int[] result = new int[number.length + 1];
-
-        for (int i = 0; i < number.length; i++) {
-            product = (digit * number[i]) + carry;
-            result[i] = product % 10;
-            carry = product / 10;
-        }
-
-        if (carry > 0) {
-            result[number.length] = carry;
-            return result;
-        }
-
-        int[] shortResult = new int[result.length - 1];
-
-        for (int i = 0; i < shortResult.length; i++) {
-            shortResult[i] = result[i];
-        }
-
-        return shortResult;
-         */
         int[] result = zero();
         for (int i = 1; i <= digit; i++) {
             result = add(result, number);
@@ -404,6 +385,9 @@ public class BigNaturals extends CommandLineProgram {
             printlnError("Error en la suma 555 + 245 = 800");
         }
 
+        if (!checkAdd("1000", "1000", "2000")) {
+            printlnError("Error en la suma 1000 + 1000 = 2000");
+        }
         if (!checkAdd("1000", "1000", "2000")) {
             printlnError("Error en la suma 1000 + 1000 = 2000");
         }
