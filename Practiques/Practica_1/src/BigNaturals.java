@@ -87,7 +87,6 @@ public class BigNaturals extends CommandLineProgram {
             }
             result = shorterResult;
         }
-
         return result;
     }
 
@@ -107,7 +106,6 @@ public class BigNaturals extends CommandLineProgram {
         for (int i = 0; i < originalLength; i++) {
             result[i + positions] = number[i];
         }
-
         return result;
     }
 
@@ -133,12 +131,35 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] multiply(int[] number1, int[] number2) {
-        int tempLength = Math.max(number1.length, number2.length);
-        int[] result = new int[tempLength]; // It can be this length or 1 more CHANGE
+        int[] result = zero();
 
-        printBar();
-        return reverseArray(result);
+        for (int i = 0; i < number2.length; i++) {
+            int digit2 = number2[i];
+
+            int[] partialResult = zero();
+            int carry = 0;
+
+            for (int j = 0; j < number1.length; j++) {
+                int digit1 = number1[j];
+
+                int product = digit1 * digit2 + carry;
+                carry = product / 10;
+                int digit = product % 10;
+
+                int[] partial = shiftLeft(new int[]{digit}, i + j);
+                partialResult = add(partialResult, partial);
+            }
+
+            if (carry > 0) {
+                int[] partial = shiftLeft(new int[]{carry}, i + number1.length);
+                partialResult = add(partialResult, partial);
+            }
+
+            result = add(result, partialResult);
+        }
+        return result;
     }
+
 
     public int[] factorial(int[] number) {
         int numberToInt = 0;
@@ -183,8 +204,8 @@ public class BigNaturals extends CommandLineProgram {
 //        testEquals();
 //        testAdd();
 //        testShiftLeft();
-        testMultiplyByDigit();
-//        testMultiply();
+//        testMultiplyByDigit();
+        testMultiply();
 //        testFactorial();
 //        testFibonacci();
     }
