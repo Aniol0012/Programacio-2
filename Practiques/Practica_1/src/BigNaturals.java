@@ -91,26 +91,6 @@ public class BigNaturals extends CommandLineProgram {
         return result;
     }
 
-    // From int gets the length as if it was in one array
-    public int getLength(int num) {
-        int length = 1;
-        while (num >= 10) {
-            num /= 10;
-            length++;
-        }
-        return length;
-    }
-
-    // From array returns it in an int
-    public int getIntFromArray(int[] num) {
-        int result = 0;
-        for (int i = 0; i < num.length; i++) {
-            int currentNum = num[i];
-            result += currentNum * Math.pow(10, (num.length - i - 1));
-        }
-        return result;
-    }
-
     public int[] shiftLeft(int[] number, int positions) {
         int originalLength = number.length;
 
@@ -153,38 +133,15 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] multiply(int[] number1, int[] number2) {
-        printBar();
-        println(number1);
-        println(number2);
-        int[] number1Reversed = reverseArray(number1);
-        int number1ToInt = getIntFromArray(shiftLeft(number1Reversed, 1));
-        print("El array 1 reversed és: ");
-        println(number1Reversed);
-        println("El number 1 a int és: " + number1ToInt);
-
-        int[] number2Reversed = reverseArray(number2);
-        int number2ToInt = getIntFromArray(shiftLeft(number2Reversed, 1));
-        print("El array 2 reversed és: ");
-        println(number2Reversed);
-        println("El number 2 a int és: " + number2ToInt);
-
-        int number1Length = number1.length;
-        int number2Length = number2.length;
-        int tempLength = Math.max(number1Length, number2Length);
+        int tempLength = Math.max(number1.length, number2.length);
         int[] result = new int[tempLength]; // It can be this length or 1 more CHANGE
-        int gettingLen = getLength(tempLength);
 
-        for (int i = 0; i < gettingLen; i++) {
-            result[i] = number1ToInt * number2ToInt;
-            println(result[i]);
-        }
         printBar();
         return reverseArray(result);
     }
 
     public int[] factorial(int[] number) {
-        println(getIntFromArray(reverseArray(number)));
-        int numberToInt = getIntFromArray(reverseArray(number));
+        int numberToInt = 0;
         if (numberToInt == 0) {
             return new int[]{0};
         } else if (numberToInt == 1) {
@@ -195,7 +152,7 @@ public class BigNaturals extends CommandLineProgram {
         for (int i = 2; i <= numberToInt; i++) {
             carry *= i;
         }
-        int totalLength = getLength(carry);
+        int totalLength = 0;
         int[] result = new int[totalLength];
 
         for (int i = 0; i < result.length; i++) {
@@ -203,9 +160,6 @@ public class BigNaturals extends CommandLineProgram {
             carry /= 10;
         }
         return result;
-
-        // No funciona perque el int no te el rang suficient, provar de ferho amb long i adaptar les funcions.
-        // El mes probable serà haver de refer les funcions per a usarles en combinació per a resoldre el problema.
     }
 
     public int[] fibonacci(int[] number) {
@@ -650,8 +604,8 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public void printBar() {
-        int numChar=150;
-        for (int i=0; i<numChar;i++){
+        int numChar = 150;
+        for (int i = 0; i < numChar; i++) {
             print("─");
             //print("═");
             //print("■");
