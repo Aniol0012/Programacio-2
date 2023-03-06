@@ -99,10 +99,6 @@ public class BigNaturals extends CommandLineProgram {
 
         int[] result = new int[originalLength + positions];
 
-        for (int i = 0; i < positions; i++) {
-            result[i] = 0;
-        }
-
         for (int i = 0; i < originalLength; i++) {
             result[i + positions] = number[i];
         }
