@@ -164,11 +164,11 @@ public class BigNaturals extends CommandLineProgram {
             return one();
         }
 
-        int[] factorial = number;
-        int[] currentFactor;
+        int currentFactor = 0;
+        int[] factorial = number, currentFactorArr = intToArray(currentFactor);
 
-        for (currentFactor = one(); !equals(currentFactor, number); currentFactor = add(currentFactor, one())) {
-            factorial = multiply(factorial, currentFactor);
+        for (currentFactor = 1; !equals(currentFactorArr, number); currentFactor++) {
+            factorial = multiply(factorial, currentFactorArr);
         }
         return factorial;
     }
