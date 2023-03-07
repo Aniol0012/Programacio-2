@@ -163,7 +163,14 @@ public class BigNaturals extends CommandLineProgram {
         if (equals(number, zero()) || equals(number, one())) {
             return one();
         }
-        return null;
+
+        int[] factorial = number;
+        int[] currentFactor;
+
+        for (currentFactor = one(); !equals(currentFactor, number); currentFactor = add(currentFactor, one())) {
+            factorial = multiply(factorial, currentFactor);
+        }
+        return factorial;
     }
 
     public int[] fibonacci(int[] number) {
