@@ -142,18 +142,22 @@ public class BigNaturals extends CommandLineProgram {
                 carry = product / 10;
                 int digit = product % 10;
 
-                int[] partial = shiftLeft(new int[]{digit}, i + j);
+                int[] partial = shiftLeft(intToArray(digit), i + j);
                 partialResult = add(partialResult, partial);
             }
 
             if (carry > 0) {
-                int[] partial = shiftLeft(new int[]{carry}, i + number2.length);
+                int[] partial = shiftLeft(intToArray(carry), i + number2.length);
                 partialResult = add(partialResult, partial);
             }
 
             result = add(result, partialResult);
         }
         return result;
+    }
+
+    public int[] intToArray(int integer) {
+        return new int[]{integer};
     }
 
 
