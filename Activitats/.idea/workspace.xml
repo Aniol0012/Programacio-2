@@ -47,7 +47,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_directory_selection": "F:/Aniol/Programació-2/Programacio-2/Activitats/src/Tema_1/test",
-    "last_opened_file_path": "C:/Users/aniol/IdeaProjects/Programacio-2/Activitats/src/Tema_2/src/Problem2_3.java",
+    "last_opened_file_path": "C:/Users/aniol/IdeaProjects/bignaturals",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -160,6 +160,7 @@
       <workItem from="1677924404123" duration="24000" />
       <workItem from="1677950084147" duration="48000" />
       <workItem from="1678008295899" duration="7813000" />
+      <workItem from="1678191347715" duration="812000" />
     </task>
     <servers />
   </component>

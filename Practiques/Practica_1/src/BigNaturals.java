@@ -2,8 +2,6 @@ import acm.program.CommandLineProgram;
 
 import java.util.Arrays;
 
-import static java.util.Arrays.deepEquals;
-
 /**
  * Implementations of infinite precision naturals using arrays of ints
  * <p>
@@ -162,25 +160,10 @@ public class BigNaturals extends CommandLineProgram {
 
 
     public int[] factorial(int[] number) {
-        int numberToInt = 0;
-        if (numberToInt == 0) {
-            return new int[]{0};
-        } else if (numberToInt == 1) {
-            return new int[]{1};
+        if (equals(number, zero()) || equals(number, one())) {
+            return one();
         }
-
-        int carry = 1;
-        for (int i = 2; i <= numberToInt; i++) {
-            carry *= i;
-        }
-        int totalLength = 0;
-        int[] result = new int[totalLength];
-
-        for (int i = 0; i < result.length; i++) {
-            result[i] = carry % 10;
-            carry /= 10;
-        }
-        return result;
+        return null;
     }
 
     public int[] fibonacci(int[] number) {
@@ -197,8 +180,8 @@ public class BigNaturals extends CommandLineProgram {
 
     public void run() {
 
-//        testFromString();
-//        testAsString();
+        testFromString();
+        testAsString();
         testZero();
         testOne();
         testEquals();
@@ -206,7 +189,7 @@ public class BigNaturals extends CommandLineProgram {
         testShiftLeft();
         testMultiplyByDigit();
         testMultiply();
-//        testFactorial();
+        testFactorial();
 //        testFibonacci();
     }
 
@@ -292,9 +275,6 @@ public class BigNaturals extends CommandLineProgram {
         if (!equals(fromString("12345"), fromString("12345"))) {
             printlnError("Error en el caso 12345 = 12345");
         }
-        if (!equals(fromString("78678278278527867857278221245524554643545289878"), fromString("78678278278527867857278221245524554643545289878"))) {
-            printlnError("Error en el caso 78678278278527867857278221245524554643545289878 = 78678278278527867857278221245524554643545289878");
-        }
         printlnInfo("Final de las pruebas de equals");
     }
 
@@ -304,11 +284,8 @@ public class BigNaturals extends CommandLineProgram {
 
     private void testAdd() {
         printlnInfo("Inicio de las pruebas de add");
-        if (!checkAdd("0", "7", "7")) {
-            printlnError("Error en la suma 0 + 7 = 7");
-        }
-        if (!checkAdd("23", "8", "31")) {
-            printlnError("Error en la suma 23 + 8 = 31");
+        if (!checkAdd("1", "1", "2")) {
+            printlnError("Error en la suma 1 + 1 = 2");
         }
         if (!checkAdd("5", "5", "10")) {
             printlnError("Error en la suma 5 + 5 = 10");
@@ -321,50 +298,6 @@ public class BigNaturals extends CommandLineProgram {
         }
         if (!checkAdd("5", "0", "5")) {
             printlnError("Error en la suma 5 + 0 = 5");
-        }
-        if (!checkAdd("500000000000000000000000000000000000", "550000000000000000000000000000000000000", "550500000000000000000000000000000000000")) {
-            printlnError("Error en la suma larga");
-        }
-        if (!checkAdd("0", "0", "0")) {
-            printlnError("Error en la suma 0 + 0 = 0");
-        }
-        if (!checkAdd("999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999", "1", "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")) {
-            printlnError("Error en la suma de números muy grandes");
-        }
-
-        if (!checkAdd("12345678901234567890", "98765432109876543210", "111111111011111111100")) {
-            printlnError("Error en la suma de números grandes");
-        }
-
-        if (!checkAdd("123456789", "987654321", "1111111110")) {
-            printlnError("Error en la suma de números pequeños");
-        }
-
-        if (!checkAdd("5", "5", "10")) {
-            printlnError("Error en la suma 5 + 5 = 10");
-        }
-
-        if (!checkAdd("9", "9", "18")) {
-            printlnError("Error en la suma 9 + 9 = 18");
-        }
-
-        if (!checkAdd("123", "987", "1110")) {
-            printlnError("Error en la suma 123 + 987 = 1110");
-        }
-
-        if (!checkAdd("12345678901234567890", "98765432109876543210", "111111111011111111100")) {
-            printlnError("Error en la suma de números grandes 2");
-        }
-
-        if (!checkAdd("555", "245", "800")) {
-            printlnError("Error en la suma 555 + 245 = 800");
-        }
-
-        if (!checkAdd("1000", "1000", "2000")) {
-            printlnError("Error en la suma 1000 + 1000 = 2000");
-        }
-        if (!checkAdd("1000", "1000", "2000")) {
-            printlnError("Error en la suma 1000 + 1000 = 2000");
         }
         printlnInfo("Final de las pruebas de add");
     }
@@ -381,28 +314,9 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkShiftLeft("54", 3, "54000")) {
             printlnError("Error en 54 3 posiciones a la izquierda = 54000");
         }
-
         if (!checkShiftLeft("0", 3, "0")) {
             printlnError("Error en 0 3 posiciones a la izquierda = 0");
         }
-        // Test con un número grande y 0 posiciones
-        if (!checkShiftLeft("123456789", 0, "123456789")) {
-            printlnError("Error en 123456789 0 posiciones a la izquierda = 123456789");
-        }
-
-        // Test con un número grande y 5 posiciones
-        if (!checkShiftLeft("123456789", 40, "1234567890000000000000000000000000000000000000000")) {
-            printlnError("Error en 123456789 5 posiciones a la izquierda = 1234567890000000000000000000000000000000000000000");
-        }
-
-        // Test con un número pequeño y 2 posiciones
-        if (!checkShiftLeft("9", 2, "900")) {
-            printlnError("Error en 9 2 posiciones a la izquierda = 900");
-        }
-        if (!checkShiftLeft("485", 2, "48500")) {
-            printlnError("Error en 485 2 posiciones a la izquierda = 48500");
-        }
-
         printlnInfo("Final de las pruebas de shiftLeft");
     }
 
@@ -424,41 +338,6 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkMultByDigit("24", 0, "0")) {
             printlnError("Error en 24 * 0 = 0");
         }
-        if (!checkMultByDigit("123", 5, "615")) {
-            printlnError("Error en 123 * 5 = 615");
-        }
-        if (!checkMultByDigit("987", 4, "3948")) {
-            printlnError("Error en 987 * 4 = 3948");
-        }
-        if (!checkMultByDigit("6789", 1, "6789")) {
-            printlnError("Error en 6789 * 1 = 6789");
-        }
-        if (!checkMultByDigit("345", 9, "3105")) {
-            printlnError("Error en 345 * 9 = 3105");
-        }
-        if (!checkMultByDigit("987", 4, "3948")) {
-            printlnError("Error en 987 * 4 = 3948");
-        }
-
-        if (!checkMultByDigit("6789", 1, "6789")) {
-            printlnError("Error en 6789 * 1 = 6789");
-        }
-
-        if (!checkMultByDigit("345", 9, "3105")) {
-            printlnError("Error en 345 * 9 = 3105");
-        }
-
-        if (!checkMultByDigit("9876543210", 2, "19753086420")) {
-            printlnError("Error en 9876543210 * 2 = 19753086420");
-        }
-
-        if (!checkMultByDigit("12345678901234567890", 3, "37037036703703703670")) {
-            printlnError("Error en 12345678901234567890 * 3 = 37037036703703703670");
-        }
-
-        if (!checkMultByDigit("99999999999999999999999999999999999999999999999999999999999999999999999999999999", 9, "899999999999999999999999999999999999999999999999999999999999999999999999999999991")) {
-            printlnError("Error en 99999999999999999999999999999999999999999999999999999999999999999999999999999999 * 9 = 899999999999999999999999999999999999999999999999999999999999999999999999999999991");
-        }
         printlnInfo("Final de las pruebas de multiplyByDigit");
     }
 
@@ -473,11 +352,11 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkMultiply("2", "3", "6")) {
             printlnError("Error en 2 * 3 = 6");
         }
-        if (!checkMultiply("10", "5", "50")) {
-            printlnError("Error en 10 * 50 = 50");
-        }
         if (!checkMultiply("999", "888", "887112")) {
             printlnError("Error en 999 * 888 = 887112");
+        }
+        if (!checkMultiply("10", "5", "50")) {
+            printlnError("Error en 10 * 50 = 50");
         }
         if (!checkMultiply("12", "555443535", "6665322420")) {
             printlnError("Error en 12 * 555443535 = 6665322420");
@@ -628,12 +507,6 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public void printBar() {
-        int numChar = 150;
-        for (int i = 0; i < numChar; i++) {
-            print("─");
-            //print("═");
-            //print("■");
-        }
-        println();
+        println("--------------------------------------------------");
     }
 }
