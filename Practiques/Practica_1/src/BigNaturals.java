@@ -165,12 +165,12 @@ public class BigNaturals extends CommandLineProgram {
         }
 
         int currentFactor = 0;
-        int[] factorial = number, currentFactorArr = intToArray(currentFactor);
+        int[] result = one(), currentFactorArr = intToArray(currentFactor);
 
         for (currentFactor = 1; !equals(currentFactorArr, number); currentFactor++) {
-            factorial = multiply(factorial, currentFactorArr);
+            result = multiply(result, currentFactorArr);
         }
-        return factorial;
+        return result;
     }
 
     public int[] fibonacci(int[] number) {
@@ -406,6 +406,12 @@ public class BigNaturals extends CommandLineProgram {
         printlnInfo("Inicio de las pruebas de factorial");
         if (!checkFactorial("5", "120")) {
             printlnError("Error en 5! = 120");
+        }
+        if (!checkFactorial("0", "1")) {
+            printlnError("Error en 0! = 1");
+        }
+        if (!checkFactorial("1", "1")) {
+            printlnError("Error en 1! = 1");
         }
         if (!checkFactorial("6", "720")) {
             printlnError("Error en 6! = 720");
