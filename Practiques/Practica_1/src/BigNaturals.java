@@ -137,26 +137,25 @@ public class BigNaturals extends CommandLineProgram {
                 int[] partial = shiftLeft(intToArray(carry), i + number2.length);
                 partialResult = add(partialResult, partial);
             }
-
             result = add(result, partialResult);
         }
         return result;
     }
-
 
     public int[] factorial(int[] number) {
         if (equals(number, zero()) || equals(number, one())) {
             return one();
         }
 
-        int currentFactor = 2;
-        int[] result = one(), currentFactorArr = intToArray(currentFactor);
+        int[] result = number, currentFactor;
 
-        for (currentFactor = 2; !equals(currentFactorArr, number); currentFactor++) {
-            result = multiply(result, currentFactorArr);
+        for (currentFactor = intToArray(2); !equals(currentFactor, number); currentFactor = add(currentFactor, one())) {
+            result = multiply(currentFactor, result);
         }
         return result;
+
     }
+
 
     public int[] fibonacci(int[] number) {
         throw new UnsupportedOperationException("Not implemented yet");
@@ -176,11 +175,11 @@ public class BigNaturals extends CommandLineProgram {
 
     public void run() {
 
-        testFromString();
-        testAsString();
-        testZero();
-        testOne();
-        testEquals();
+//        testFromString();
+//        testAsString();
+//        testZero();
+//        testOne();
+//        testEquals();
         testAdd();
         testShiftLeft();
         testMultiplyByDigit();
@@ -249,7 +248,7 @@ public class BigNaturals extends CommandLineProgram {
         if (!"0".equals(asString(zero()))) {
             printlnError("Error en la función zero");
         }
-        printlnInfo("Final de las pruebas de zero");
+        printlnOk("Final de las pruebas de zero");
     }
 
     private void testOne() {
@@ -257,7 +256,7 @@ public class BigNaturals extends CommandLineProgram {
         if (!"1".equals(asString(one()))) {
             printlnError("Error en la función one");
         }
-        printlnInfo("Final de las pruebas de one");
+        printlnOk("Final de las pruebas de one");
     }
 
     private void testEquals() {
@@ -271,7 +270,7 @@ public class BigNaturals extends CommandLineProgram {
         if (!equals(fromString("12345"), fromString("12345"))) {
             printlnError("Error en el caso 12345 = 12345");
         }
-        printlnInfo("Final de las pruebas de equals");
+        printlnOk("Final de las pruebas de equals");
     }
 
     private boolean checkAdd(String number1, String number2, String result) {
@@ -295,7 +294,7 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkAdd("5", "0", "5")) {
             printlnError("Error en la suma 5 + 0 = 5");
         }
-        printlnInfo("Final de las pruebas de add");
+        printlnOk("Final de las pruebas de add");
     }
 
     private boolean checkShiftLeft(String number, int exponent, String result) {
@@ -313,7 +312,7 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkShiftLeft("0", 3, "0")) {
             printlnError("Error en 0 3 posiciones a la izquierda = 0");
         }
-        printlnInfo("Final de las pruebas de shiftLeft");
+        printlnOk("Final de las pruebas de shiftLeft");
     }
 
     private boolean checkMultByDigit(String number, int digit, String result) {
@@ -334,7 +333,7 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkMultByDigit("24", 0, "0")) {
             printlnError("Error en 24 * 0 = 0");
         }
-        printlnInfo("Final de las pruebas de multiplyByDigit");
+        printlnOk("Final de las pruebas de multiplyByDigit");
     }
 
     // multiply
@@ -381,7 +380,7 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkMultiply("815915283247897734345611269596115894272000000000", "41", "33452526613163807108170062053440751665152000000000")) {
             printlnError("Error en último producto de 41!");
         }
-        printlnInfo("Final de las pruebas de multiply");
+        printlnOk("Final de las pruebas de multiply");
     }
 
 
@@ -438,7 +437,7 @@ public class BigNaturals extends CommandLineProgram {
             printlnError("42! ---------> " + asString(factorial(fromString("42"))));
             printlnError("Error en 42! = 1405006117752879898543142606244511569936384000000000");
         }
-        printlnInfo("Final de las pruebas de factorial");
+        printlnOk("Final de las pruebas de factorial");
     }
 
     private boolean checkFibonacci(String number, String result) {
@@ -483,7 +482,7 @@ public class BigNaturals extends CommandLineProgram {
         if (!checkFibonacci("200", "280571172992510140037611932413038677189525")) {
             printlnError("Error en fibonacci(200) != 280571172992510140037611932413038677189525");
         }
-        printlnInfo("Final de las pruebas del fibonacci");
+        printlnOk("Final de las pruebas del fibonacci");
     }
 
     // Colorize output for CommandLineProgram
