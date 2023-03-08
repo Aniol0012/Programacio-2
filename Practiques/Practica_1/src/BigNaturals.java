@@ -35,9 +35,9 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] add(int[] num1, int[] num2) {
-        if (num1.length == 1 && num1[0] == 0) {
+        if (equals(num1, zero())) {
             return num2;
-        } else if (num2.length == 1 && num2[0] == 0) {
+        } else if (equals(num2, zero())) {
             return num1;
         }
 
@@ -89,31 +89,20 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] shiftLeft(int[] number, int positions) {
-        int originalLength = number.length;
-
-        if ((originalLength == 1 && number[0] == 0) || positions == 0) {
+        if (equals(number, zero()) || positions == 0) {
             return number;
         }
 
-        int[] result = new int[originalLength + positions];
+        int[] result = new int[number.length + positions];
 
-        for (int i = 0; i < originalLength; i++) {
+        for (int i = 0; i < number.length; i++) {
             result[i + positions] = number[i];
         }
         return result;
     }
 
-
-    public int[] reverseArray(int[] arr) {
-        int[] arrReversed = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) { // Faig la representació del array
-            arrReversed[arr.length - i - 1] = arr[i];
-        }
-        return arrReversed;
-    }
-
     public int[] multiplyByDigit(int[] number, int digit) {
-        if ((number.length == 1 && number[0] == 0) || digit == 0) {
+        if (equals(number, zero()) || digit == 0) {
             zero();
         }
 
@@ -154,10 +143,6 @@ public class BigNaturals extends CommandLineProgram {
         return result;
     }
 
-    public int[] intToArray(int integer) {
-        return new int[]{integer};
-    }
-
 
     public int[] factorial(int[] number) {
         if (equals(number, zero()) || equals(number, one())) {
@@ -175,6 +160,10 @@ public class BigNaturals extends CommandLineProgram {
 
     public int[] fibonacci(int[] number) {
         throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+    public int[] intToArray(int integer) {
+        return new int[]{integer};
     }
 
     public void println(int[] arr) { // Eliminar
