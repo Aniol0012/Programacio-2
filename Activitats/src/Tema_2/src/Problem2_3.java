@@ -43,9 +43,9 @@ public class Problem2_3 extends CommandLineProgram {
 
     public void test2() {
         printBar();
-        String str = "b";
+        String str = "b ";
         int distance = -1;
-        String resultStr = "a";
+        String resultStr = "a ";
         println("Original string: |" + str + "| Distance: " + distance);
         println("Result string: |" + encodeCaesar(str, distance) + "|");
         if (resultStr.equals(encodeCaesar(str, distance))) {
@@ -71,9 +71,9 @@ public class Problem2_3 extends CommandLineProgram {
 
     public void test4() {
         printBar();
-        String str = "ABC ";
+        String str = "BcCcZz!";
         int distance = 2;
-        String resultStr = "CDE ";
+        String resultStr = "DdEeAa!";
         println("Original string: |" + str + "| Distance: " + distance);
         println("Result string: |" + encodeCaesar(str, distance) + "|");
         if (resultStr.equals(encodeCaesar(str, distance))) {

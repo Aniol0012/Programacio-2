@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b23f568-13fa-486b-b104-777c91e1b53b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Tema_2/src/Problem2_4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Activitats/Tema_2/src/Problem2_4.class" afterDir="false" />
+    <list default="true" id="9b23f568-13fa-486b-b104-777c91e1b53b" name="Changes" comment="Better Problem2_3">
       <change beforePath="$PROJECT_DIR$/src/Tema_2/src/Problem2_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_2/src/Problem2_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tema_2/src/Problem2_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_2/src/Problem2_4.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +75,7 @@
       <recent name="Tema_2.src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Problem2_4">
+  <component name="RunManager" selected="Application.Problem2_3">
     <configuration name="Problem2_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Tema_2.src.Problem2_2" />
       <module name="Activitats" />
@@ -143,10 +139,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Problem2_3" />
         <item itemvalue="Application.Problem2_4" />
         <item itemvalue="Application.Problem2_5" />
         <item itemvalue="Application.Problem2_2" />
-        <item itemvalue="Application.Problem2_3" />
         <item itemvalue="JUnit.Problem6Test" />
       </list>
     </recent_temporary>
@@ -165,8 +161,16 @@
       <workItem from="1677950084147" duration="48000" />
       <workItem from="1678008295899" duration="7813000" />
       <workItem from="1678191347715" duration="812000" />
-      <workItem from="1678356860699" duration="1458000" />
+      <workItem from="1678356860699" duration="1803000" />
     </task>
+    <task id="LOCAL-00001" summary="Better Problem2_3">
+      <created>1678358348542</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678358348542</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,5 +186,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Better Problem2_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Better Problem2_3" />
   </component>
 </project>
