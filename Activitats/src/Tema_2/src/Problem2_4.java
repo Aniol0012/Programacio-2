@@ -18,19 +18,13 @@ public class Problem2_4 extends CommandLineProgram {
     public static final String DELIMITERS = " ,.;:123456789";
 
     public String longestWord(String line) {
-        if (line.length() == 0) {
-            return line;
-        }
-
-        int maxLength = 0;
         String longestWord = "";
         StringTokenizer st = new StringTokenizer(line, DELIMITERS);
 
         while (st.hasMoreTokens()) {
             String word = st.nextToken();
 
-            if (word.length() >= maxLength) { // If the length of the words is equal, it returns the last one
-                maxLength = word.length();
+            if (word.length() > longestWord.length()) {
                 longestWord = word;
             }
         }
@@ -51,7 +45,7 @@ public class Problem2_4 extends CommandLineProgram {
     public void test2() {
         printBar();
         String str = "The quick brown fox jumps over the lazy dog";
-        String resultStr = "jumps";
+        String resultStr = "quick";
         if (resultStr.equals(longestWord(str))) {
             println("Test 2 passed");
         } else {
