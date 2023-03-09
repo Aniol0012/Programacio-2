@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b407f81f-c13b-4541-afc1-00589e455e40" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Practiques/Practiques.iml" beforeDir="false" />
-    </list>
+    <list default="true" id="b407f81f-c13b-4541-afc1-00589e455e40" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +23,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/aniol/IdeaProjects/Programacio-2/Activitats",
+    "last_opened_file_path": "/Users/Aniol0012/IdeaProjects/Programacio-2",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -39,10 +37,22 @@
       <option name="presentableId" value="Default" />
       <updated>1677950067231</updated>
       <workItem from="1677950068505" duration="14000" />
+      <workItem from="1678356844269" duration="15000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

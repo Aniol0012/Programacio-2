@@ -39,7 +39,7 @@ public class Problem2_4 extends CommandLineProgram {
 
     public void test1() {
         printBar();
-        String str = "hey how are you today";
+        String str = "hey, how are you today";
         String resultStr = "today";
         if (resultStr.equals(longestWord(str))) {
             println("Test 1 passed");

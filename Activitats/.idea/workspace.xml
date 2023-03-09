@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b23f568-13fa-486b-b104-777c91e1b53b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Activitats/Tema_2/src/Problem2_4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Activitats/Tema_2/src/Problem2_4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_2/src/Problem2_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_2/src/Problem2_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tema_2/src/Problem2_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tema_2/src/Problem2_4.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,32 +38,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_directory_selection": "F:/Aniol/Programació-2/Programacio-2/Activitats/src/Tema_1/test",
-    "last_opened_file_path": "C:/Users/aniol/IdeaProjects/bignaturals",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15332031",
-    "project.structure.side.proportion": "0.2",
-    "two.files.diff.last.used.file": "C:/Users/aniol/IdeaProjects/Programacio-2/Activitats/src/Tema_2/src/Problem2_3.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_directory_selection&quot;: &quot;F:/Aniol/Programació-2/Programacio-2/Activitats/src/Tema_1/test&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aniol/IdeaProjects/bignaturals&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15332031&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/aniol/IdeaProjects/Programacio-2/Activitats/src/Tema_2/src/Problem2_3.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -75,7 +79,7 @@
       <recent name="Tema_2.src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Problem2_5">
+  <component name="RunManager" selected="Application.Problem2_4">
     <configuration name="Problem2_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Tema_2.src.Problem2_2" />
       <module name="Activitats" />
@@ -139,8 +143,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Problem2_5" />
         <item itemvalue="Application.Problem2_4" />
+        <item itemvalue="Application.Problem2_5" />
         <item itemvalue="Application.Problem2_2" />
         <item itemvalue="Application.Problem2_3" />
         <item itemvalue="JUnit.Problem6Test" />
@@ -161,6 +165,7 @@
       <workItem from="1677950084147" duration="48000" />
       <workItem from="1678008295899" duration="7813000" />
       <workItem from="1678191347715" duration="812000" />
+      <workItem from="1678356860699" duration="1458000" />
     </task>
     <servers />
   </component>

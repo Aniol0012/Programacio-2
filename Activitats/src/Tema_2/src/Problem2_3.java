@@ -13,7 +13,7 @@ public class Problem2_3 extends CommandLineProgram {
         printBar();
     }
 
-    public String encodeCesar(String message, int distance) {
+    public String encodeCaesar(String message, int distance) {
         int[] messageInt = new int[message.length()];
         char[] messageCharArr = message.toCharArray();
         char[] result = new char[message.length()];
@@ -25,7 +25,7 @@ public class Problem2_3 extends CommandLineProgram {
             }
             result[i] = Character.toChars(messageInt[i])[0];
         }
-        return String.valueOf(result);
+        return new String(result);
     }
 
     public void test1() {
@@ -33,8 +33,8 @@ public class Problem2_3 extends CommandLineProgram {
         int distance = 2;
         String resultStr = "CDE";
         println("Original string: |" + str + "| Distance: " + distance);
-        println("Result string: |" + encodeCesar(str, distance) + "|");
-        if (resultStr.equals(encodeCesar(str, distance))) {
+        println("Result string: |" + encodeCaesar(str, distance) + "|");
+        if (resultStr.equals(encodeCaesar(str, distance))) {
             println("Test 1 passed");
         } else {
             println("Test 1 didn't pass");
@@ -47,8 +47,8 @@ public class Problem2_3 extends CommandLineProgram {
         int distance = -1;
         String resultStr = "a";
         println("Original string: |" + str + "| Distance: " + distance);
-        println("Result string: |" + encodeCesar(str, distance) + "|");
-        if (resultStr.equals(encodeCesar(str, distance))) {
+        println("Result string: |" + encodeCaesar(str, distance) + "|");
+        if (resultStr.equals(encodeCaesar(str, distance))) {
             println("Test 2 passed");
         } else {
             println("Test 2 didn't pass");
@@ -61,8 +61,8 @@ public class Problem2_3 extends CommandLineProgram {
         int distance = 2;
         String resultStr = "CD$E";
         println("Original string: |" + str + "| Distance: " + distance);
-        println("Result string: |" + encodeCesar(str, distance) + "|");
-        if (resultStr.equals(encodeCesar(str, distance))) {
+        println("Result string: |" + encodeCaesar(str, distance) + "|");
+        if (resultStr.equals(encodeCaesar(str, distance))) {
             println("Test 3 passed");
         } else {
             println("Test 3 didn't pass");
@@ -75,8 +75,8 @@ public class Problem2_3 extends CommandLineProgram {
         int distance = 2;
         String resultStr = "CDE ";
         println("Original string: |" + str + "| Distance: " + distance);
-        println("Result string: |" + encodeCesar(str, distance) + "|");
-        if (resultStr.equals(encodeCesar(str, distance))) {
+        println("Result string: |" + encodeCaesar(str, distance) + "|");
+        if (resultStr.equals(encodeCaesar(str, distance))) {
             println("Test 4 passed");
         } else {
             println("Test 4 didn't pass");
