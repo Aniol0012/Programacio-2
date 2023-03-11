@@ -16,10 +16,6 @@ public class Problem2_5 extends CommandLineProgram {
     public static final String DELIMITERS = " ,.;:123456789";
 
     public String makeAcronym(String line) {
-        if (line.length() == 0) {
-            return line;
-        }
-
         StringTokenizer st = new StringTokenizer(line, DELIMITERS);
         String acronym = "";
 
@@ -30,14 +26,13 @@ public class Problem2_5 extends CommandLineProgram {
                 acronym += Character.toUpperCase(word.charAt(0)) + ".";
             }
         }
-
         return acronym;
     }
 
     private boolean isExcluded(String word) {
-        String[] excludedWords = {"el", "la", "un", "una", "unos", "unas", "los", "las", "y", "o", "de"};
+        String[] excludedWords = new String[]{"el", "la", "un", "una", "unos", "unas", "los", "las", "y", "o", "de"};
         for (int i = 0; i < excludedWords.length; i++) {
-            if (word.equals(excludedWords[i])) {
+            if (word.equalsIgnoreCase(excludedWords[i])) {
                 return true;
             }
         }

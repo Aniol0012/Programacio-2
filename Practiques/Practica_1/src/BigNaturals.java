@@ -156,10 +156,39 @@ public class BigNaturals extends CommandLineProgram {
 
     }
 
-
     public int[] fibonacci(int[] number) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        printBar();
+        if (equals(number, zero())) {
+            return zero();
+        } else if (equals(number, one())) {
+            return one();
+        }
+
+        int[] previousFactor = zero();
+        int[] currentFactor = one();
+        int[] result = new int[number.length];
+        // fib_n = fib_n-1 + fib_n-2
+        for (int position = 0; position != number.length; position++) {
+            int[] sum = add(previousFactor, currentFactor);
+            previousFactor = currentFactor;
+            currentFactor = sum;
+            print("PV en " + position + ": ");
+            println(previousFactor);
+            print("CF en " + position + ": ");
+            println(currentFactor);
+        }
+        return currentFactor;
     }
+
+/*
+    public int[] reverseArray(int[] arr) {
+        int[] result = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = arr[arr.length - i - 1];
+        }
+        return result;
+    }
+ */
 
     public int[] intToArray(int integer) {
         return new int[]{integer};
@@ -180,12 +209,12 @@ public class BigNaturals extends CommandLineProgram {
 //        testZero();
 //        testOne();
 //        testEquals();
-        testAdd();
-        testShiftLeft();
-        testMultiplyByDigit();
-        testMultiply();
-        testFactorial();
-//        testFibonacci();
+//        testAdd();
+//        testShiftLeft();
+//        testMultiplyByDigit();
+//        testMultiply();
+//        testFactorial();
+        testFibonacci();
     }
 
     public static void main(String[] args) {

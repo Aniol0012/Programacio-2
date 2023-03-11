@@ -44,8 +44,8 @@ public class Problem2_4 extends CommandLineProgram {
 
     public void test2() {
         printBar();
-        String str = "The quick brown fox jumps over the lazy dog";
-        String resultStr = "quick";
+        String str = "test!ngString ";
+        String resultStr = "test!ngString";
         if (resultStr.equals(longestWord(str))) {
             println("Test 2 passed");
         } else {
