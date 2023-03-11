@@ -156,6 +156,7 @@ public class BigNaturals extends CommandLineProgram {
 
     }
 
+    /*
     public int[] fibonacci(int[] number) {
         printBar();
         if (equals(number, zero())) {
@@ -179,6 +180,47 @@ public class BigNaturals extends CommandLineProgram {
         }
         return currentFactor;
     }
+    */
+    public int[] fibonacci(int[] number) {
+        if (equals(number, zero())) {
+            return zero();
+        } else if (equals(number, one())) {
+            return one();
+        }
+
+        int[] previousFactor = zero();
+        int[] currentFactor = one();
+        int[] result = new int[number.length];
+
+        // Fibonacci algorithm requires summing the two previous numbers, not just their positions in the array
+        for (int i = number.length - 1; i >= 0; i--) {
+            int[] sum = add(previousFactor, currentFactor);
+            previousFactor = currentFactor;
+            currentFactor = sum;
+            // Shift the result array by one and add the new digit
+            for (int j = number.length - 1; j > i; j--) {
+                result[j] = result[j - 1];
+            }
+            result[i] = currentFactor[0];
+            currentFactor[0] = 0;
+        }
+        println(result);
+        return result;
+    }
+
+
+    /*
+    PROMPT:
+    En este codigo que te voy a pasar el array de enteros que se pasa se representa de forma diferente. En este caso
+    el bit de menos peso esta a la izquierda y cada digito entre 0 y 9 esta en una posicion del array. Es decir, el
+    numero 345 en el array que se pasa es el [5, 4, 3].
+
+    En este caso tengo que hacer el codigo de fibonacci en iterativo y el array que se le pasa esta representado de la forma
+    previamente descrita. En la funcion add() se le pasan dos arrays de enteros representados de esta forma y devuelve la suma.
+    Si necesitas el codigo de alguna funcion dimelo y te la paso.
+
+    Termina de implementar esta funcion para que funcione. Piensa que el array que se le pasa puede ser de tamaño muy grande (20 o 30 cifras).
+     */
 
 /*
     public int[] reverseArray(int[] arr) {
