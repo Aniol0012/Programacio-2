@@ -153,12 +153,12 @@ public class BigNaturals extends CommandLineProgram {
             result = multiply(currentFactor, result);
         }
         return result;
+
     }
 
+    /*
     public int[] fibonacci(int[] number) {
         printBar();
-        print("Number ");
-        println(number);
         if (equals(number, zero())) {
             return zero();
         } else if (equals(number, one())) {
@@ -166,46 +166,51 @@ public class BigNaturals extends CommandLineProgram {
         }
 
         int[] previousFactor = zero();
-        int[] currentFactor;
-        int[] result = number;
-
+        int[] currentFactor = one();
+        int[] result = new int[number.length];
         // fib_n = fib_n-1 + fib_n-2
-        for (currentFactor = one(); !equals(result, number); currentFactor = add(currentFactor, one())) {
-            result = add(previousFactor, currentFactor);
-            //previousFactor = currentFactor;
-            //currentFactor = result;
-            //previousFactor = add(previousFactor, one());
-            //currentFactor = add(currentFactor, one());
-            print("Current factor ");
-            println(currentFactor);
-            print("Previous factor ");
+        for (int position = 0; position != number.length; position++) {
+            int[] sum = add(previousFactor, currentFactor);
+            previousFactor = currentFactor;
+            currentFactor = sum;
+            print("PV en " + position + ": ");
             println(previousFactor);
-            print("Result ");
-            println(result);
+            print("CF en " + position + ": ");
+            println(currentFactor);
         }
+        return currentFactor;
+    }
+    */
+    public int[] fibonacci(int[] number) {
+        if (equals(number, zero())) {
+            return zero();
+        } else if (equals(number, one())) {
+            return one();
+        }
+
+        int[] previousFactor = zero();
+        int[] currentFactor = one();
+        int[] result = new int[number.length];
+
+        // Fibonacci algorithm requires summing the two previous numbers, not just their positions in the array
+        for (int i = number.length - 1; i >= 0; i--) {
+            int[] sum = add(previousFactor, currentFactor);
+            previousFactor = currentFactor;
+            currentFactor = sum;
+            // Shift the result array by one and add the new digit
+            for (int j = number.length - 1; j > i; j--) {
+                result[j] = result[j - 1];
+            }
+            result[i] = currentFactor[0];
+            currentFactor[0] = 0;
+        }
+        println(result);
         return result;
     }
 
-    /*
-    public static int fibonacci(int n) {
-        if (n <= 1) {
-            return n;
-        }
-
-        int fib = 1;
-        int prevFib = 1;
-
-        for (int i = 2; i < n; i++) {
-            int temp = fib;
-            fib += prevFib;
-            prevFib = temp;
-        }
-        return fib;
-    }
-
-     */
 
     /*
+    PROMPT:
     En este codigo que te voy a pasar el array de enteros que se pasa se representa de forma diferente. En este caso
     el bit de menos peso esta a la izquierda y cada digito entre 0 y 9 esta en una posicion del array. Es decir, el
     numero 345 en el array que se pasa es el [5, 4, 3].
@@ -217,45 +222,15 @@ public class BigNaturals extends CommandLineProgram {
     Termina de implementar esta funcion para que funcione. Piensa que el array que se le pasa puede ser de tamaño muy grande (20 o 30 cifras).
      */
 
-    /*
-        public int[] reverseArray(int[] arr) {
-            int[] result = new int[arr.length];
-            for (int i = 0; i < arr.length; i++) {
-                result[i] = arr[arr.length - i - 1];
-            }
-            return result;
+/*
+    public int[] reverseArray(int[] arr) {
+        int[] result = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = arr[arr.length - i - 1];
         }
-     */
-
-    public boolean lessThan(int[] a, int[] b) {
-        // Remove leading zeros
-        while (a.length > 1 && a[0] == 0) {
-            a = Arrays.copyOfRange(a, 1, a.length);
-        }
-        while (b.length > 1 && b[0] == 0) {
-            b = Arrays.copyOfRange(b, 1, b.length);
-        }
-
-        // Compare length
-        if (a.length < b.length) {
-            return true;
-        } else if (a.length > b.length) {
-            return false;
-        }
-
-        // Compare digit by digit
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] < b[i]) {
-                return true;
-            } else if (a[i] > b[i]) {
-                return false;
-            }
-        }
-
-        // The numbers are equal
-        return false;
+        return result;
     }
-
+ */
 
     public int[] intToArray(int integer) {
         return new int[]{integer};
@@ -594,14 +569,12 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public void printlnOk(String message) {
-        if (acm.program.CommandLineProgram.class.isInstance(this))
-            println(ANSI_GREEN + "OK: " + message + ANSI_RESET);
+        if (acm.program.CommandLineProgram.class.isInstance(this)) println(ANSI_GREEN + "OK: " + message + ANSI_RESET);
         else println("OK: " + message);
     }
 
     public void printlnError(String message) {
-        if (acm.program.CommandLineProgram.class.isInstance(this))
-            println(ANSI_RED + "ERROR: " + message + ANSI_RESET);
+        if (acm.program.CommandLineProgram.class.isInstance(this)) println(ANSI_RED + "ERROR: " + message + ANSI_RESET);
         else println("ERROR: " + message);
     }
 
