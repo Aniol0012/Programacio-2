@@ -155,10 +155,9 @@ public class BigNaturals extends CommandLineProgram {
         return result;
     }
 
+    /*
     public int[] fibonacci(int[] number) {
-        printBar();
-        print("Number ");
-        println(number);
+        printBar();print("Number ");println(number);
         if (equals(number, zero())) {
             return zero();
         } else if (equals(number, one())) {
@@ -176,14 +175,35 @@ public class BigNaturals extends CommandLineProgram {
             //currentFactor = result;
             //previousFactor = add(previousFactor, one());
             //currentFactor = add(currentFactor, one());
-            print("Current factor ");
-            println(currentFactor);
-            print("Previous factor ");
-            println(previousFactor);
-            print("Result ");
-            println(result);
+            print("Current factor ");println(currentFactor);print("Previous factor ");println(previousFactor);print("Result ");println(result);
         }
         return result;
+    }
+     */
+    public int[] fibonacci(int[] number) {
+        printBar();
+        print("Number ");
+        println(number);
+        if (equals(number, zero())) {
+            return zero();
+        } else if (equals(number, one())) {
+            return one();
+        }
+
+        int[] fib = number; // one()
+        int[] prevFib = one();
+
+        // fib_n = fib_n-1 + fib_n-2
+        for (int i = 2; lessThan(intToArray(i), number); i++) {
+            int[] temp = new int[fib.length];
+            for (int j = 0; j < fib.length; j++) {
+                temp[j] = fib[j];
+            }
+            fib = add(fib, prevFib);
+            prevFib = temp;
+        }
+        println(fib);
+        return fib;
     }
 
     /*
@@ -217,15 +237,14 @@ public class BigNaturals extends CommandLineProgram {
     Termina de implementar esta funcion para que funcione. Piensa que el array que se le pasa puede ser de tamaño muy grande (20 o 30 cifras).
      */
 
-    /*
-        public int[] reverseArray(int[] arr) {
-            int[] result = new int[arr.length];
-            for (int i = 0; i < arr.length; i++) {
-                result[i] = arr[arr.length - i - 1];
-            }
-            return result;
+
+    public int[] reverseArray(int[] arr) {
+        int[] result = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = arr[arr.length - i - 1];
         }
-     */
+        return result;
+    }
 
     public boolean lessThan(int[] a, int[] b) {
         // Remove leading zeros
