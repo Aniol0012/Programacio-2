@@ -155,7 +155,7 @@ public class BigNaturals extends CommandLineProgram {
         return result;
     }
 
-    /*
+
     public int[] fibonacci(int[] number) {
         printBar();print("Number ");println(number);
         if (equals(number, zero())) {
@@ -169,7 +169,7 @@ public class BigNaturals extends CommandLineProgram {
         int[] result = number;
 
         // fib_n = fib_n-1 + fib_n-2
-        for (currentFactor = one(); !equals(result, number); currentFactor = add(currentFactor, one())) {
+        for (currentFactor = one(); !equals(currentFactor, number); currentFactor = add(currentFactor, one())) {
             result = add(previousFactor, currentFactor);
             //previousFactor = currentFactor;
             //currentFactor = result;
@@ -179,7 +179,11 @@ public class BigNaturals extends CommandLineProgram {
         }
         return result;
     }
-     */
+    
+
+
+
+    /*
     public int[] fibonacci(int[] number) {
         printBar();
         print("Number ");
@@ -202,7 +206,7 @@ public class BigNaturals extends CommandLineProgram {
             fib = add(fib, prevFib);
             prevFib = temp;
         }
-        println(fib);
+        print("Result: "); println(fib);
         return fib;
     }
 
@@ -575,6 +579,21 @@ public class BigNaturals extends CommandLineProgram {
         }
         if (!checkFibonacci("4", "3")) {
             printlnError("Error en fibonacci(4) != 3");
+        }
+        if (!checkFibonacci("5", "5")) {
+            printlnError("Error en fibonacci(5) != 5");
+        }
+        if (!checkFibonacci("6", "8")) {
+            printlnError("Error en fibonacci(6) != 8");
+        }
+        if (!checkFibonacci("7", "13")) {
+            printlnError("Error en fibonacci(7) != 13");
+        }
+        if (!checkFibonacci("8", "21")) {
+            printlnError("Error en fibonacci(8) != 21");
+        }
+        if (!checkFibonacci("9", "34")) {
+            printlnError("Error en fibonacci(9) != 34");
         }
         if (!checkFibonacci("10", "55")) {
             printlnError("Error en fibonacci(10) != 55");
