@@ -154,6 +154,7 @@ public class BigNaturals extends CommandLineProgram {
         }
         return result;
     }
+
     public int[] fibonacci(int[] number) {
         if (equals(number, zero())) {
             return zero();
@@ -162,27 +163,19 @@ public class BigNaturals extends CommandLineProgram {
         }
 
         int position = getIntFromArray(number);
-        return getFibo(position-1);
+        return getFibo(position);
     }
 
     public int[] getFibo(int position) {
-        if (position < 0) { // check in main, this has to be deleted
-            return null;
-        } else if (position == 0) {
-            return new int[]{1};
-        } else if (position == 1) {
-            return new int[]{1};
-        } else {
-            int[] fiboPrevPrev = {1}; // previousFactor = zero();
-            int[] fiboPrev = {1}; // currentFactor;
-            int[] fibo = null;
-            for (int i = 2; i <= position; i++) {
-                fibo = add(fiboPrevPrev, fiboPrev); // addArrays
-                fiboPrevPrev = fiboPrev;
-                fiboPrev = fibo;
-            }
-            return fibo;
+        int[] prevPrevFactor = zero();
+        int[] prevFactor = one();
+        int[] currentFactor = null;
+        for (int i = 2; i <= position; i++) {
+            currentFactor = add(prevPrevFactor, prevFactor);
+            prevPrevFactor = prevFactor;
+            prevFactor = currentFactor;
         }
+        return currentFactor;
     }
 
     public int getIntFromArray(int[] num) {
@@ -196,14 +189,6 @@ public class BigNaturals extends CommandLineProgram {
 
     public int[] intToArray(int integer) {
         return new int[]{integer};
-    }
-
-    public void println(int[] arr) { // Eliminar
-        print("{*} [");
-        for (int i = 0; i < arr.length - 1; i++) {
-            print(arr[i] + ",");
-        }
-        println(arr[arr.length - 1] + "]");
     }
 
     public void run() {
