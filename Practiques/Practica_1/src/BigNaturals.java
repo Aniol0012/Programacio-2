@@ -154,131 +154,45 @@ public class BigNaturals extends CommandLineProgram {
         }
         return result;
     }
-
-
     public int[] fibonacci(int[] number) {
-        printBar();print("Number ");println(number);
         if (equals(number, zero())) {
             return zero();
         } else if (equals(number, one())) {
             return one();
         }
 
-        int[] previousFactor = zero();
-        int[] currentFactor;
-        int[] result = number;
+        int position = getIntFromArray(number);
+        return getFibo(position-1);
+    }
 
-        // fib_n = fib_n-1 + fib_n-2
-        for (currentFactor = one(); !equals(currentFactor, number); currentFactor = add(currentFactor, one())) {
-            result = add(previousFactor, currentFactor);
-            //previousFactor = currentFactor;
-            //currentFactor = result;
-            //previousFactor = add(previousFactor, one());
-            //currentFactor = add(currentFactor, one());
-            print("Current factor ");println(currentFactor);print("Previous factor ");println(previousFactor);print("Result ");println(result);
+    public int[] getFibo(int position) {
+        if (position < 0) { // check in main, this has to be deleted
+            return null;
+        } else if (position == 0) {
+            return new int[]{1};
+        } else if (position == 1) {
+            return new int[]{1};
+        } else {
+            int[] fiboPrevPrev = {1}; // previousFactor = zero();
+            int[] fiboPrev = {1}; // currentFactor;
+            int[] fibo = null;
+            for (int i = 2; i <= position; i++) {
+                fibo = add(fiboPrevPrev, fiboPrev); // addArrays
+                fiboPrevPrev = fiboPrev;
+                fiboPrev = fibo;
+            }
+            return fibo;
+        }
+    }
+
+    public int getIntFromArray(int[] num) {
+        int result = 0;
+        for (int i = num.length - 1; i >= 0; i--) {
+            int currentNum = num[i];
+            result = result * 10 + currentNum;
         }
         return result;
     }
-    
-
-
-
-    /*
-    public int[] fibonacci(int[] number) {
-        printBar();
-        print("Number ");
-        println(number);
-        if (equals(number, zero())) {
-            return zero();
-        } else if (equals(number, one())) {
-            return one();
-        }
-
-        int[] fib = number; // one()
-        int[] prevFib = one();
-
-        // fib_n = fib_n-1 + fib_n-2
-        for (int i = 2; lessThan(intToArray(i), number); i++) {
-            int[] temp = new int[fib.length];
-            for (int j = 0; j < fib.length; j++) {
-                temp[j] = fib[j];
-            }
-            fib = add(fib, prevFib);
-            prevFib = temp;
-        }
-        print("Result: "); println(fib);
-        return fib;
-    }
-
-    /*
-    public static int fibonacci(int n) {
-        if (n <= 1) {
-            return n;
-        }
-
-        int fib = 1;
-        int prevFib = 1;
-
-        for (int i = 2; i < n; i++) {
-            int temp = fib;
-            fib += prevFib;
-            prevFib = temp;
-        }
-        return fib;
-    }
-
-     */
-
-    /*
-    En este codigo que te voy a pasar el array de enteros que se pasa se representa de forma diferente. En este caso
-    el bit de menos peso esta a la izquierda y cada digito entre 0 y 9 esta en una posicion del array. Es decir, el
-    numero 345 en el array que se pasa es el [5, 4, 3].
-
-    En este caso tengo que hacer el codigo de fibonacci en iterativo y el array que se le pasa esta representado de la forma
-    previamente descrita. En la funcion add() se le pasan dos arrays de enteros representados de esta forma y devuelve la suma.
-    Si necesitas el codigo de alguna funcion dimelo y te la paso.
-
-    Termina de implementar esta funcion para que funcione. Piensa que el array que se le pasa puede ser de tamaño muy grande (20 o 30 cifras).
-     */
-
-
-    public int[] reverseArray(int[] arr) {
-        int[] result = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            result[i] = arr[arr.length - i - 1];
-        }
-        return result;
-    }
-
-    public boolean lessThan(int[] a, int[] b) {
-        // Remove leading zeros
-        while (a.length > 1 && a[0] == 0) {
-            a = Arrays.copyOfRange(a, 1, a.length);
-        }
-        while (b.length > 1 && b[0] == 0) {
-            b = Arrays.copyOfRange(b, 1, b.length);
-        }
-
-        // Compare length
-        if (a.length < b.length) {
-            return true;
-        } else if (a.length > b.length) {
-            return false;
-        }
-
-        // Compare digit by digit
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] < b[i]) {
-                return true;
-            } else if (a[i] > b[i]) {
-                return false;
-            }
-        }
-
-        // The numbers are equal
-        return false;
-    }
-
 
     public int[] intToArray(int integer) {
         return new int[]{integer};
