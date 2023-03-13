@@ -176,10 +176,10 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int getIntFromArray(int[] array) {
-        int result = 0;
+        int result, currentNum;
 
         for (int i = 0; i < array.length; i++) {
-            int currentNum = array[array.length - 1 - i];
+            currentNum = array[array.length - 1 - i];
             result = (result * 10) + currentNum;
         }
         return result;
@@ -192,16 +192,16 @@ public class BigNaturals extends CommandLineProgram {
 
     public void run() {
 
-//        testFromString();
-//        testAsString();
-//        testZero();
-//        testOne();
-//        testEquals();
-//        testAdd();
-//        testShiftLeft();
-//        testMultiplyByDigit();
-//        testMultiply();
-//        testFactorial();
+        testFromString();
+        testAsString();
+        testZero();
+        testOne();
+        testEquals();
+        testAdd();
+        testShiftLeft();
+        testMultiplyByDigit();
+        testMultiply();
+        testFactorial();
         testFibonacci();
     }
 
