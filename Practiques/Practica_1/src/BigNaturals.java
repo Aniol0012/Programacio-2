@@ -166,25 +166,27 @@ public class BigNaturals extends CommandLineProgram {
         return getFibo(position);
     }
 
+    public int getIntFromArray(int[] array) {
+        int result = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            int currentNum = array[array.length - 1 - i];
+            result = (result * 10) + currentNum;
+        }
+        return result;
+    }
+
     public int[] getFibo(int position) {
         int[] prevPrevFactor = zero();
         int[] prevFactor = one();
-        int[] currentFactor = null;
+        int[] currentFactor = intToArray(2);
+
         for (int i = 2; i <= position; i++) {
             currentFactor = add(prevPrevFactor, prevFactor);
             prevPrevFactor = prevFactor;
             prevFactor = currentFactor;
         }
         return currentFactor;
-    }
-
-    public int getIntFromArray(int[] num) {
-        int result = 0;
-        for (int i = num.length - 1; i >= 0; i--) {
-            int currentNum = num[i];
-            result = result * 10 + currentNum;
-        }
-        return result;
     }
 
     public int[] intToArray(int integer) {
