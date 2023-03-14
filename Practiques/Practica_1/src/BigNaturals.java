@@ -176,7 +176,7 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int getIntFromArray(int[] array) {
-        int result, currentNum;
+        int result = 0, currentNum;
 
         for (int i = 0; i < array.length; i++) {
             currentNum = array[array.length - 1 - i];
