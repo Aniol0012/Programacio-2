@@ -35,12 +35,6 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] add(int[] num1, int[] num2) {
-        if (equals(num1, zero())) {
-            return num2;
-        } else if (equals(num2, zero())) {
-            return num1;
-        }
-
         int tempLength = Math.max(num1.length, num2.length);
         int total, carry = 0;
         int[] result = new int[tempLength + 1];
@@ -48,12 +42,14 @@ public class BigNaturals extends CommandLineProgram {
         for (int i = 0; i < tempLength; i++) {
             int digit1 = 0;
             int digit2 = 0;
+
             if (num1.length > i) {
                 digit1 = num1[i];
             }
             if (num2.length > i) {
                 digit2 = num2[i];
             }
+
             total = digit1 + digit2 + carry;
             if (total > 9) {
                 carry = 1;
@@ -64,21 +60,20 @@ public class BigNaturals extends CommandLineProgram {
         }
 
         if (carry > 0) {
-            result[tempLength] = carry;
+            result[result.length - 1] = carry;
         }
 
-        int lastIndex = result.length - 1;
         int nonZeroDigit = 0;
 
         // Deletes the unnecessary 0's
-        for (int i = 0; i <= lastIndex; i++) {
+        for (int i = 0; i < result.length; i++) {
             if (result[i] != 0) {
                 nonZeroDigit = i;
             }
         }
 
         // Checks if there are any 0's left
-        if (nonZeroDigit != lastIndex) {
+        if (nonZeroDigit != result.length - 1) {
             int[] shorterResult = new int[nonZeroDigit + 1];
             for (int j = 0; j <= nonZeroDigit; j++) {
                 shorterResult[j] = result[j];
@@ -102,11 +97,8 @@ public class BigNaturals extends CommandLineProgram {
     }
 
     public int[] multiplyByDigit(int[] number, int digit) {
-        if (equals(number, zero()) || digit == 0) {
-            zero();
-        }
-
         int[] result = zero();
+
         for (int i = 1; i <= digit; i++) {
             result = add(result, number);
         }
