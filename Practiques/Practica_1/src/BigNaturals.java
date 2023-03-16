@@ -99,7 +99,7 @@ public class BigNaturals extends CommandLineProgram {
     public int[] multiplyByDigit(int[] number, int digit) {
         int[] result = zero();
 
-        for (int i = 1; i <= digit; i++) {
+        for (int i = 0; i < digit; i++) {
             result = add(result, number);
         }
         return result;
@@ -177,13 +177,11 @@ public class BigNaturals extends CommandLineProgram {
         return result;
     }
 
-
     public int[] intToArray(int integer) {
         return new int[]{integer};
     }
 
     public void run() {
-
         testFromString();
         testAsString();
         testZero();
