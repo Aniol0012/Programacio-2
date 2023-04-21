@@ -41,7 +41,7 @@ find . -name ".DS_Store" -type f -exec rm -f {} +
 # Llexeix el valor actual del fitxer
 current_version=$(echo $(git rev-list --count HEAD))
 
-# Incrementa la versió en una unitat si es fa push, sinó es manté igual
+# Incrementa la versió en una unitat si es fa push, si no es manté igual
 if [[ $1 == "-p" ]]; then
     new_version=$((current_version + 1))
 else
