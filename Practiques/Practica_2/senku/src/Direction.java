@@ -1,5 +1,5 @@
 public class Direction {
-    // L'eix de coordenades està situat a la cantonada superior esquerra
+    // The coordinate axis is located in the upper left corner
     public static final Direction UP = new Direction(0, -1);
     public static final Direction RIGHT = new Direction(1, 0);
     public static final Direction DOWN = new Direction(0, 1);
