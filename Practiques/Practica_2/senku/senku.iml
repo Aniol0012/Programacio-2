@@ -26,5 +26,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="acm-javadoc" level="project" />
+    <orderEntry type="library" name="acm" level="project" />
   </component>
 </module>

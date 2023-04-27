@@ -4,8 +4,8 @@ import java.awt.event.MouseEvent;
 
 public class Senku extends GraphicsProgram {
 
-    public static final int APPLICATION_WIDTH = 600;
-    public static final int APPLICATION_HEIGHT = 600;
+    public static final int APPLICATION_WIDTH = 600; // Default: 600
+    public static final int APPLICATION_HEIGHT = 600; // Default: 600
 
     private static final double OUTER = 0.05;
     private static final double INNER = 0.03;
