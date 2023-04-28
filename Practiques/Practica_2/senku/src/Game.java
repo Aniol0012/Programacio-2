@@ -15,7 +15,7 @@ public class Game {
             Position adjacent = direction.apply(from);
             Position to = direction.apply(adjacent);
 
-            if (board.isPositionValid(adjacent) && board.isPositionValid(to) && board.isFilled(from) && board.isFilled(adjacent) && board.isEmpty(to)) {
+            if (board.isFilled(from) && board.isFilled(adjacent) && board.isEmpty(to) && board.isPositionValid(adjacent) && board.isPositionValid(to)) {
                 return true;
             }
         }
