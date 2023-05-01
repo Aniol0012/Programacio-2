@@ -45,30 +45,26 @@ public class Geometry {
     }
 
     public GDimension cellDimension() {
-        GDimension boardDim = boardDimension();
-        double cellWidth = boardDim.getWidth() / numCols;
-        double cellHeight = boardDim.getHeight() / numRows;
+        double cellWidth = boardDimension().getWidth() / numCols;
+        double cellHeight = boardDimension().getHeight() / numRows;
         return new GDimension(cellWidth, cellHeight);
     }
 
     public GPoint cellTopLeft(int x, int y) {
-        GDimension cellDim = cellDimension();
-        double topLeftX = boardTopLeft().getX() + cellDim.getWidth() * x;
-        double topLeftY = boardTopLeft().getY() + cellDim.getHeight() * y;
+        double topLeftX = boardTopLeft().getX() + cellDimension().getWidth() * x;
+        double topLeftY = boardTopLeft().getY() + cellDimension().getHeight() * y;
         return new GPoint(topLeftX, topLeftY);
     }
 
     public GDimension tokenDimension() {
-        GDimension cellDim = cellDimension();
-        double tokenWidth = cellDim.getWidth() * calculateFactor(cellPadding);
-        double tokenHeight = cellDim.getHeight() * calculateFactor(cellPadding);
+        double tokenWidth = cellDimension().getWidth() * calculateFactor(cellPadding);
+        double tokenHeight = cellDimension().getHeight() * calculateFactor(cellPadding);
         return new GDimension(tokenWidth, tokenHeight);
     }
 
     public GPoint tokenTopLeft(int x, int y) {
-        GDimension cellDim = cellDimension();
-        double topLeftX = cellTopLeft(x, y).getX() + cellPadding * cellDim.getWidth();
-        double topLeftY = cellTopLeft(x, y).getY() + cellPadding * cellDim.getHeight();
+        double topLeftX = cellTopLeft(x, y).getX() + cellPadding * cellDimension().getWidth();
+        double topLeftY = cellTopLeft(x, y).getY() + cellPadding * cellDimension().getHeight();
         return new GPoint(topLeftX, topLeftY);
     }
 
@@ -79,9 +75,8 @@ public class Geometry {
     }
 
     public GPoint centerAt(int x, int y) {
-        GDimension cellDim = cellDimension();
-        double centerX = cellTopLeft(x, y).getX() + cellDim.getWidth() / 2;
-        double centerY = cellTopLeft(x, y).getY() + cellDim.getHeight() / 2;
+        double centerX = cellTopLeft(x, y).getX() + cellDimension().getWidth() / 2;
+        double centerY = cellTopLeft(x, y).getY() + cellDimension().getHeight() / 2;
         return new GPoint(centerX, centerY);
     }
 }
