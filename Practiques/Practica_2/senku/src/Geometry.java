@@ -67,9 +67,8 @@ public class Geometry {
 
     public GPoint tokenTopLeft(int x, int y) {
         GDimension cellDim = cellDimension();
-        GPoint cellTopLeftPoint = cellTopLeft(x, y);
-        double topLeftX = cellTopLeftPoint.getX() + cellPadding * cellDim.getWidth();
-        double topLeftY = cellTopLeftPoint.getY() + cellPadding * cellDim.getHeight();
+        double topLeftX = cellTopLeft(x, y).getX() + cellPadding * cellDim.getWidth();
+        double topLeftY = cellTopLeft(x, y).getY() + cellPadding * cellDim.getHeight();
         return new GPoint(topLeftX, topLeftY);
     }
 
@@ -81,9 +80,8 @@ public class Geometry {
 
     public GPoint centerAt(int x, int y) {
         GDimension cellDim = cellDimension();
-        GPoint topLeft = cellTopLeft(x, y);
-        double centerX = topLeft.getX() + cellDim.getWidth() / 2;
-        double centerY = topLeft.getY() + cellDim.getHeight() / 2;
+        double centerX = cellTopLeft(x, y).getX() + cellDim.getWidth() / 2;
+        double centerY = cellTopLeft(x, y).getY() + cellDim.getHeight() / 2;
         return new GPoint(centerX, centerY);
     }
 }

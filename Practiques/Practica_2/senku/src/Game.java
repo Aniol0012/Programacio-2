@@ -68,7 +68,9 @@ public class Game {
 
     public int countValidMovesTo(Position validFrom) {
         int validMovesTo = 0;
-        for (Direction direction : Direction.ALL) {
+        Direction[] directions = Direction.ALL;
+        for (int i = 0; i < directions.length; i++) {
+            Direction direction = directions[i];
             Position adjacent = direction.apply(validFrom);
             Position to = direction.apply(adjacent);
             if (board.isPositionValid(to) && board.isEmpty(to) && board.isFilled(adjacent)) {
