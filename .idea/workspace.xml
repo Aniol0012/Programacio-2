@@ -23,8 +23,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/Aniol0012/IdeaProjects/Programacio-2",
+    "last_opened_file_path": "C:/Users/aniol/Desktop/Programacio-2/Practiques/Practica_2/senku",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -38,6 +41,7 @@
       <updated>1677950067231</updated>
       <workItem from="1677950068505" duration="14000" />
       <workItem from="1678356844269" duration="15000" />
+      <workItem from="1682929071542" duration="130000" />
     </task>
     <servers />
   </component>

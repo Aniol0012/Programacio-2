@@ -21,18 +21,14 @@ public class Position {
     }
 
     public int distance(Position other) {
-        int distance;
-        int position1 = Math.abs((other.x) - (this.x));
-        int position2 = Math.abs((other.y) - (this.y));
-
-        distance = position1 + position2;
-        return distance;
+        int positionX = Math.abs((other.x) - (this.x));
+        int positionY = Math.abs((other.y) - (this.y));
+        return positionX + positionY;
     }
 
     public Position middle(Position other) {
         int x = (other.x + this.x) / 2;
         int y = (other.y + this.y) / 2;
-
         return new Position(x, y);
     }
 
