@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6d0b9754-36f3-4801-8400-6bd1d7d87f9b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/senku/Geometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/senku/Geometry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/senku/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/senku/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +36,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/aniol/Desktop/Programacio-2/Practiques/Practica_2/senku",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -76,7 +84,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682929201469</updated>
-      <workItem from="1682929202486" duration="11252000" />
+      <workItem from="1682929202486" duration="11665000" />
+      <workItem from="1682953846433" duration="7890000" />
     </task>
     <servers />
   </component>

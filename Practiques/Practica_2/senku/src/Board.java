@@ -42,7 +42,7 @@ public class Board {
     }
 
     public boolean isForbidden(Position pos) {
-        return !isPositionValid(pos) ||  getCellAtPosition(pos).isForbidden();
+        return !isPositionValid(pos) || getCellAtPosition(pos).isForbidden();
     }
 
     public boolean isFilled(Position pos) {

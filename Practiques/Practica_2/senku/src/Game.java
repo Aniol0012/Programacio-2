@@ -66,6 +66,7 @@ public class Game {
         return validMovesFrom;
     }
 
+    // Assumes validFrom is a valid starting position
     public int countValidMovesTo(Position validFrom) {
         int validMovesTo = 0;
         Direction[] directions = Direction.ALL;
