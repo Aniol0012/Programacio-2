@@ -54,27 +54,27 @@ public class Game {
     }
 
     public int countValidMovesFrom() {
-        int counter = 0;
+        int validMovesFrom = 0;
         for (int y = 0; y < board.getHeight(); y++) {
             for (int x = 0; x < board.getWidth(); x++) {
                 Position from = new Position(x, y);
                 if (isValidFrom(from)) {
-                    counter++;
+                    validMovesFrom++;
                 }
             }
         }
-        return counter;
+        return validMovesFrom;
     }
 
     public int countValidMovesTo(Position validFrom) {
-        int counter = 0;
+        int validMovesTo = 0;
         for (Direction direction : Direction.ALL) {
             Position adjacent = direction.apply(validFrom);
             Position to = direction.apply(adjacent);
             if (board.isPositionValid(to) && board.isEmpty(to) && board.isFilled(adjacent)) {
-                counter++;
+                validMovesTo++;
             }
         }
-        return counter;
+        return validMovesTo;
     }
 }

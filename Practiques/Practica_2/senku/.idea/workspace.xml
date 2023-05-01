@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d0b9754-36f3-4801-8400-6bd1d7d87f9b" name="Changes" comment="" />
+    <list default="true" id="6d0b9754-36f3-4801-8400-6bd1d7d87f9b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/senku/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/senku/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +13,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PBSuE9WOpgox0SmuVI9xgTcMj2" />
   <component name="ProjectViewState">
@@ -40,9 +47,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DirectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="senku" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DirectionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in senku" />
+        <item itemvalue="JUnit.DirectionTest" />
         <item itemvalue="Application.Senku" />
       </list>
     </recent_temporary>
@@ -55,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682929201469</updated>
-      <workItem from="1682929202486" duration="2896000" />
+      <workItem from="1682929202486" duration="8241000" />
     </task>
     <servers />
   </component>
