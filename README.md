@@ -11,5 +11,5 @@ Repositori de les activitats i pràctiques realitzades a Progrmacio II.
 ### Instal·lació:
 
    ```sh
-   git clone https://github.com/Aniol0012/Programacio-2
+   git clone https://github.com/Aniol0012/Programacio-2.git
    ```
